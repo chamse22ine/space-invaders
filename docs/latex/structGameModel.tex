@@ -1,0 +1,109 @@
+\doxysection{Game\+Model Struct Reference}
+\hypertarget{structGameModel}{}\label{structGameModel}\index{GameModel@{GameModel}}
+
+
+Structure Principale (God Object). Contient l\textquotesingle{}intégralité des données du jeu. C\textquotesingle{}est ce bloc mémoire qui est écrit sur le disque lors d\textquotesingle{}une sauvegarde (Serialization).  
+
+
+
+
+{\ttfamily \#include $<$model.\+h$>$}
+
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structGameModel_a569549096e2f622fe2b134b323d78d55}\label{structGameModel_a569549096e2f622fe2b134b323d78d55} 
+\mbox{\hyperlink{model_8h_a28b2e38d97689acd8aa713262f6f873d}{Game\+State\+Enum}} {\bfseries state}
+\begin{DoxyCompactList}\small\item\em État courant. \end{DoxyCompactList}\item 
+\Hypertarget{structGameModel_ad7b822017ecbfbdfbcc3ced16fc8b881}\label{structGameModel_ad7b822017ecbfbdfbcc3ced16fc8b881} 
+\mbox{\hyperlink{model_8h_a28b2e38d97689acd8aa713262f6f873d}{Game\+State\+Enum}} {\bfseries previous\+\_\+state}
+\begin{DoxyCompactList}\small\item\em État précédent (pour retour après Pause). \end{DoxyCompactList}\item 
+\Hypertarget{structGameModel_a65d689e56d363dc912b089ea46b19187}\label{structGameModel_a65d689e56d363dc912b089ea46b19187} 
+\mbox{\hyperlink{structEntity}{Entity}} {\bfseries player}
+\begin{DoxyCompactList}\small\item\em Le Joueur. \end{DoxyCompactList}\item 
+\Hypertarget{structGameModel_aa6a70588a6c14694b2ca523d54031a69}\label{structGameModel_aa6a70588a6c14694b2ca523d54031a69} 
+\mbox{\hyperlink{structEntity}{Entity}} {\bfseries enemies} \mbox{[}\mbox{\hyperlink{common_8h_a544651f3405cff79c40d898a8e54f507}{MAX\+\_\+\+ENEMIES}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em Le tableau des envahisseurs. \end{DoxyCompactList}\item 
+\Hypertarget{structGameModel_a9dccad919d568b664f0a442658f74ff4}\label{structGameModel_a9dccad919d568b664f0a442658f74ff4} 
+\mbox{\hyperlink{structEntity}{Entity}} {\bfseries bullets} \mbox{[}\mbox{\hyperlink{common_8h_a4331843c2698da5ccb18562eb1485681}{MAX\+\_\+\+BULLETS}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em Le pool de projectiles. \end{DoxyCompactList}\item 
+\Hypertarget{structGameModel_a811efada4c89ef2dae92a4ce38f4e619}\label{structGameModel_a811efada4c89ef2dae92a4ce38f4e619} 
+\mbox{\hyperlink{structUfo}{Ufo}} {\bfseries ufo}
+\begin{DoxyCompactList}\small\item\em L\textquotesingle{}OVNI bonus. \end{DoxyCompactList}\item 
+\Hypertarget{structGameModel_aae456a71f0e80fc354ac62dffd601dd2}\label{structGameModel_aae456a71f0e80fc354ac62dffd601dd2} 
+\mbox{\hyperlink{structShield}{Shield}} {\bfseries shields} \mbox{[}\mbox{\hyperlink{model_8h_aa57a2db336697f4bb00a14e6491f4fe2}{MAX\+\_\+\+SHIELDS}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em Les bunkers. \end{DoxyCompactList}\item 
+\Hypertarget{structGameModel_a1992b7ef0f4a923278a61dce8d43992c}\label{structGameModel_a1992b7ef0f4a923278a61dce8d43992c} 
+int {\bfseries score}
+\begin{DoxyCompactList}\small\item\em Score actuel. \end{DoxyCompactList}\item 
+\Hypertarget{structGameModel_a33cc19edb9395c10513e7f614f0269a7}\label{structGameModel_a33cc19edb9395c10513e7f614f0269a7} 
+int {\bfseries lives}
+\begin{DoxyCompactList}\small\item\em Vies restantes. \end{DoxyCompactList}\item 
+\Hypertarget{structGameModel_a7dec59452f4b2c2a7a5712230e222497}\label{structGameModel_a7dec59452f4b2c2a7a5712230e222497} 
+int {\bfseries level}
+\begin{DoxyCompactList}\small\item\em Niveau de difficulté actuel. \end{DoxyCompactList}\item 
+\Hypertarget{structGameModel_a3d5f5217baddec7460f45e010461ef81}\label{structGameModel_a3d5f5217baddec7460f45e010461ef81} 
+int {\bfseries normal\+\_\+max\+\_\+lives}
+\begin{DoxyCompactList}\small\item\em Seuil pour gagner une vie bonus (ex\+: tous les 1500 pts). \end{DoxyCompactList}\item 
+\Hypertarget{structGameModel_addb155fdd1e94d8194a6c7e592f5c1bf}\label{structGameModel_addb155fdd1e94d8194a6c7e592f5c1bf} 
+float {\bfseries enemy\+\_\+speed\+\_\+mult}
+\begin{DoxyCompactList}\small\item\em Accélération globale des aliens (plus il en reste peu, plus ils vont vite). \end{DoxyCompactList}\item 
+\Hypertarget{structGameModel_ad1e10c6c0da4656ca266cf53456656e0}\label{structGameModel_ad1e10c6c0da4656ca266cf53456656e0} 
+int {\bfseries direction\+\_\+enemies}
+\begin{DoxyCompactList}\small\item\em 1 (Droite) ou -\/1 (Gauche). \end{DoxyCompactList}\item 
+\Hypertarget{structGameModel_aa9228553b155f0592ab9449eb11ad20a}\label{structGameModel_aa9228553b155f0592ab9449eb11ad20a} 
+int {\bfseries drop\+\_\+direction}
+\begin{DoxyCompactList}\small\item\em Sens vertical (généralement 1 pour descendre). \end{DoxyCompactList}\item 
+\Hypertarget{structGameModel_a583506b5961f7f2ab80ea338fec9b19a}\label{structGameModel_a583506b5961f7f2ab80ea338fec9b19a} 
+int {\bfseries drop\+\_\+step\+\_\+count}
+\begin{DoxyCompactList}\small\item\em Compteur pour gérer l\textquotesingle{}animation saccadée de descente. \end{DoxyCompactList}\item 
+\Hypertarget{structGameModel_aa83164445106db176fb6fcf6e3af6006}\label{structGameModel_aa83164445106db176fb6fcf6e3af6006} 
+int {\bfseries animation\+\_\+frame}
+\begin{DoxyCompactList}\small\item\em Frame globale (0/1) synchronisant tous les aliens. \end{DoxyCompactList}\item 
+\Hypertarget{structGameModel_a70a525ebf5581fb6f8bbb34d870a7327}\label{structGameModel_a70a525ebf5581fb6f8bbb34d870a7327} 
+float {\bfseries animation\+\_\+timer}
+\begin{DoxyCompactList}\small\item\em Timer pour battre la mesure de l\textquotesingle{}animation. \end{DoxyCompactList}\item 
+\Hypertarget{structGameModel_aab12eea9fe828325e3d603bd4afcd1fa}\label{structGameModel_aab12eea9fe828325e3d603bd4afcd1fa} 
+float {\bfseries game\+\_\+over\+\_\+timer}
+\begin{DoxyCompactList}\small\item\em Bloque les inputs quelques secondes après la mort. \end{DoxyCompactList}\item 
+\Hypertarget{structGameModel_a78d368b496edbcb19d04fa3aeaef4447}\label{structGameModel_a78d368b496edbcb19d04fa3aeaef4447} 
+float {\bfseries hit\+\_\+timer}
+\begin{DoxyCompactList}\small\item\em Temps d\textquotesingle{}invulnérabilité après un impact. \end{DoxyCompactList}\item 
+\Hypertarget{structGameModel_ab919061c1c67827d4f598610daf7a89a}\label{structGameModel_ab919061c1c67827d4f598610daf7a89a} 
+float {\bfseries save\+\_\+success\+\_\+timer}
+\begin{DoxyCompactList}\small\item\em Temps d\textquotesingle{}affichage du message de succès sauvegarde. \end{DoxyCompactList}\item 
+\Hypertarget{structGameModel_ae2314f48d8d5022b7eda74dca4275590}\label{structGameModel_ae2314f48d8d5022b7eda74dca4275590} 
+int {\bfseries menu\+\_\+selection}
+\begin{DoxyCompactList}\small\item\em Index de l\textquotesingle{}élément sélectionné (0, 1, 2...). \end{DoxyCompactList}\item 
+\Hypertarget{structGameModel_a7e2940b084039fbe1ceeed6fe04c30d4}\label{structGameModel_a7e2940b084039fbe1ceeed6fe04c30d4} 
+char {\bfseries input\+\_\+buffer} \mbox{[}\mbox{\hyperlink{model_8h_acc9794f655f61a3246ba3fd5c9c67e14}{MAX\+\_\+\+FILENAME\+\_\+\+LEN}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em Buffer stockant ce que le joueur tape (Sauvegarde). \end{DoxyCompactList}\item 
+\Hypertarget{structGameModel_ad9449c3d7593f57a413d4c40a6a810b3}\label{structGameModel_ad9449c3d7593f57a413d4c40a6a810b3} 
+char {\bfseries save\+\_\+files} \mbox{[}\mbox{\hyperlink{model_8h_a66f57b801049415c022575f61752608a}{MAX\+\_\+\+SAVE\+\_\+\+FILES}}\mbox{]}\mbox{[}256\mbox{]}
+\begin{DoxyCompactList}\small\item\em Cache des noms de fichiers trouvés dans /saves. \end{DoxyCompactList}\item 
+\Hypertarget{structGameModel_ac4b60a519a2001b9e58f3b25b2ab5c6f}\label{structGameModel_ac4b60a519a2001b9e58f3b25b2ab5c6f} 
+int {\bfseries save\+\_\+file\+\_\+count}
+\begin{DoxyCompactList}\small\item\em Nombre de fichiers valides trouvés. \end{DoxyCompactList}\item 
+\Hypertarget{structGameModel_a4282963c9aca1287319a16a05b6a8ef1}\label{structGameModel_a4282963c9aca1287319a16a05b6a8ef1} 
+char {\bfseries current\+\_\+filename} \mbox{[}64\mbox{]}
+\begin{DoxyCompactList}\small\item\em Nom du fichier actuellement chargé (pour écrasement rapide). \end{DoxyCompactList}\item 
+\Hypertarget{structGameModel_a59034baace568e662ef5a3f10e00bfe1}\label{structGameModel_a59034baace568e662ef5a3f10e00bfe1} 
+bool {\bfseries pending\+\_\+quit}
+\begin{DoxyCompactList}\small\item\em Flag demandant la fermeture propre de la boucle principale. \end{DoxyCompactList}\item 
+\Hypertarget{structGameModel_a8f56152fe31438a2a469c21027cff4a7}\label{structGameModel_a8f56152fe31438a2a469c21027cff4a7} 
+\mbox{\hyperlink{structSoundState}{Sound\+State}} {\bfseries sounds}
+\begin{DoxyCompactList}\small\item\em État des demandes sonores. \end{DoxyCompactList}\item 
+\Hypertarget{structGameModel_a5280d13fc26f8cdd4f9744af4ed824b9}\label{structGameModel_a5280d13fc26f8cdd4f9744af4ed824b9} 
+int {\bfseries volume}
+\begin{DoxyCompactList}\small\item\em Volume global (0-\/100). \end{DoxyCompactList}\item 
+\Hypertarget{structGameModel_a5687e5cc90438346d39b0948625b6a02}\label{structGameModel_a5687e5cc90438346d39b0948625b6a02} 
+bool {\bfseries is\+\_\+muted}
+\begin{DoxyCompactList}\small\item\em Mode muet. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Structure Principale (God Object). Contient l\textquotesingle{}intégralité des données du jeu. C\textquotesingle{}est ce bloc mémoire qui est écrit sur le disque lors d\textquotesingle{}une sauvegarde (Serialization). 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{model_8h}{model.\+h}}\end{DoxyCompactItemize}

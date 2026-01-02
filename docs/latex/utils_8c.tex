@@ -1,0 +1,72 @@
+\doxysection{src/utils.c File Reference}
+\hypertarget{utils_8c}{}\label{utils_8c}\index{src/utils.c@{src/utils.c}}
+
+
+Implémentation des fonctions utilitaires (Version POSIX/\+Linux).  
+
+
+{\ttfamily \#include "{}utils.\+h"{}}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{utils_8c_a3024ccd4a9af5109d24e6c57565d74a1}\label{utils_8c_a3024ccd4a9af5109d24e6c57565d74a1} 
+\#define {\bfseries \+\_\+\+POSIX\+\_\+\+C\+\_\+\+SOURCE}~199309L
+\begin{DoxyCompactList}\small\item\em Active les fonctionnalités POSIX 1993 (requis pour clock\+\_\+gettime). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{utils_8c_a67e97a00cbec17b49a737520702f5744}{utils\+\_\+get\+\_\+time}} (void)
+\begin{DoxyCompactList}\small\item\em Récupère le temps écoulé depuis le démarrage système. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{utils_8c_a4a070281b89b7fdf5b81473abf290a3f}{utils\+\_\+sleep\+\_\+ms}} (int ms)
+\begin{DoxyCompactList}\small\item\em Endort le processus pour libérer le CPU. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{utils_8c_aec7132b5831cf9e563f0894a2c539909}{utils\+\_\+random\+\_\+int}} (int min, int max)
+\begin{DoxyCompactList}\small\item\em Générateur pseudo-\/aléatoire simple. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implémentation des fonctions utilitaires (Version POSIX/\+Linux). 
+
+Ce fichier implémente les outils de gestion du temps et d\textquotesingle{}aléatoire. Il utilise les API standards POSIX ({\ttfamily clock\+\_\+gettime}, {\ttfamily nanosleep}) pour garantir une précision à la nanoseconde, nécessaire pour une boucle de jeu fluide (60 FPS). 
+
+\label{doc-func-members}
+\Hypertarget{utils_8c_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{utils_8c_a67e97a00cbec17b49a737520702f5744}\index{utils.c@{utils.c}!utils\_get\_time@{utils\_get\_time}}
+\index{utils\_get\_time@{utils\_get\_time}!utils.c@{utils.c}}
+\doxysubsubsection{\texorpdfstring{utils\_get\_time()}{utils\_get\_time()}}
+{\footnotesize\ttfamily \label{utils_8c_a67e97a00cbec17b49a737520702f5744} 
+double utils\+\_\+get\+\_\+time (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Récupère le temps écoulé depuis le démarrage système. 
+
+Récupère le temps actuel avec une haute précision (seconde).
+
+Utilise {\ttfamily CLOCK\+\_\+\+MONOTONIC} \+: C\textquotesingle{}est une horloge qui ne revient jamais en arrière, même si l\textquotesingle{}utilisateur change l\textquotesingle{}heure de son ordinateur. C\textquotesingle{}est vital pour éviter que la physique du jeu ne plante ou ne saute. \Hypertarget{utils_8c_aec7132b5831cf9e563f0894a2c539909}\index{utils.c@{utils.c}!utils\_random\_int@{utils\_random\_int}}
+\index{utils\_random\_int@{utils\_random\_int}!utils.c@{utils.c}}
+\doxysubsubsection{\texorpdfstring{utils\_random\_int()}{utils\_random\_int()}}
+{\footnotesize\ttfamily \label{utils_8c_aec7132b5831cf9e563f0894a2c539909} 
+int utils\+\_\+random\+\_\+int (\begin{DoxyParamCaption}\item[{int}]{min}{, }\item[{int}]{max}{}\end{DoxyParamCaption})}
+
+
+
+Générateur pseudo-\/aléatoire simple. 
+
+Génère un nombre entier pseudo-\/aléatoire borné.
+
+Utilise l\textquotesingle{}arithmétique modulaire pour borner le résultat entre min et max. Note \+: Suppose que srand() a été appelé au début du programme (fait dans model\+\_\+init). \Hypertarget{utils_8c_a4a070281b89b7fdf5b81473abf290a3f}\index{utils.c@{utils.c}!utils\_sleep\_ms@{utils\_sleep\_ms}}
+\index{utils\_sleep\_ms@{utils\_sleep\_ms}!utils.c@{utils.c}}
+\doxysubsubsection{\texorpdfstring{utils\_sleep\_ms()}{utils\_sleep\_ms()}}
+{\footnotesize\ttfamily \label{utils_8c_a4a070281b89b7fdf5b81473abf290a3f} 
+void utils\+\_\+sleep\+\_\+ms (\begin{DoxyParamCaption}\item[{int}]{ms}{}\end{DoxyParamCaption})}
+
+
+
+Endort le processus pour libérer le CPU. 
+
+Met le thread principal en pause (Sleep).
+
+Utilise {\ttfamily nanosleep} qui est plus précis que le {\ttfamily sleep()} standard et n\textquotesingle{}interfère pas avec les signaux système. 

@@ -1,0 +1,12 @@
+/home/chamseddine/Documents/cours/SAE/L3/c-avance/space-invaders/3rdParty/SDL3_image/build/CMakeFiles/SDL3_image-shared.dir
+/home/chamseddine/Documents/cours/SAE/L3/c-avance/space-invaders/3rdParty/SDL3_image/build/CMakeFiles/uninstall.dir
+/home/chamseddine/Documents/cours/SAE/L3/c-avance/space-invaders/3rdParty/SDL3_image/build/CMakeFiles/showanim.dir
+/home/chamseddine/Documents/cours/SAE/L3/c-avance/space-invaders/3rdParty/SDL3_image/build/CMakeFiles/showimage.dir
+/home/chamseddine/Documents/cours/SAE/L3/c-avance/space-invaders/3rdParty/SDL3_image/build/CMakeFiles/package.dir
+/home/chamseddine/Documents/cours/SAE/L3/c-avance/space-invaders/3rdParty/SDL3_image/build/CMakeFiles/package_source.dir
+/home/chamseddine/Documents/cours/SAE/L3/c-avance/space-invaders/3rdParty/SDL3_image/build/CMakeFiles/edit_cache.dir
+/home/chamseddine/Documents/cours/SAE/L3/c-avance/space-invaders/3rdParty/SDL3_image/build/CMakeFiles/rebuild_cache.dir
+/home/chamseddine/Documents/cours/SAE/L3/c-avance/space-invaders/3rdParty/SDL3_image/build/CMakeFiles/list_install_components.dir
+/home/chamseddine/Documents/cours/SAE/L3/c-avance/space-invaders/3rdParty/SDL3_image/build/CMakeFiles/install.dir
+/home/chamseddine/Documents/cours/SAE/L3/c-avance/space-invaders/3rdParty/SDL3_image/build/CMakeFiles/install/local.dir
+/home/chamseddine/Documents/cours/SAE/L3/c-avance/space-invaders/3rdParty/SDL3_image/build/CMakeFiles/install/strip.dir

@@ -1,0 +1,86 @@
+\doxysection{include/common.h File Reference}
+\hypertarget{common_8h}{}\label{common_8h}\index{include/common.h@{include/common.h}}
+
+
+Configuration globale et constantes du jeu.  
+
+
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+\doxysubsubsection*{Macros}
+\begin{Indent}\textbf{ Grille de Jeu}\par
+{\em Dimensions abstraites du terrain. Le rendu (SDL/\+Ncurses) se charge d\textquotesingle{}adapter ces coordonnées à la taille réelle de la fenêtre. }\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{common_8h_a693f306b88f7336281e4d1f07754579c}\label{common_8h_a693f306b88f7336281e4d1f07754579c} 
+\#define {\bfseries GAME\+\_\+\+WIDTH}~100
+\begin{DoxyCompactList}\small\item\em Largeur logique du terrain (0 à 100). \end{DoxyCompactList}\item 
+\Hypertarget{common_8h_addffa3e327bacbc3da87278442b2b507}\label{common_8h_addffa3e327bacbc3da87278442b2b507} 
+\#define {\bfseries GAME\+\_\+\+HEIGHT}~50
+\begin{DoxyCompactList}\small\item\em Hauteur logique du terrain (0 à 50). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Tableaux Statiques}\par
+{\em Tailles maximales pour éviter les allocations dynamiques (malloc) durant la boucle de jeu principale. }\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{common_8h_a544651f3405cff79c40d898a8e54f507}{MAX\+\_\+\+ENEMIES}}~60
+\begin{DoxyCompactList}\small\item\em Nombre maximum d\textquotesingle{}ennemis actifs simultanément. (Prévision large pour une grille standard d\textquotesingle{}envahisseurs). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{common_8h_a4331843c2698da5ccb18562eb1485681}{MAX\+\_\+\+BULLETS}}~100
+\begin{DoxyCompactList}\small\item\em Nombre maximum de projectiles à l\textquotesingle{}écran. Cumule les tirs du joueur et ceux des ennemis. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Gestion du Temps}\par
+{\em Constantes pour stabiliser la vitesse du jeu sur différents CPU. }\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{common_8h_acef24ae9a88131f27f1554acfd6ad976}\label{common_8h_acef24ae9a88131f27f1554acfd6ad976} 
+\#define {\bfseries TARGET\+\_\+\+FPS}~60
+\begin{DoxyCompactList}\small\item\em Cible d\textquotesingle{}images par seconde (Standard Arcade). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{common_8h_a33fabd29c10aabcb416dfbf5c84d3e08}{FRAME\+\_\+\+DELAY}}~(1000 / \mbox{\hyperlink{common_8h_acef24ae9a88131f27f1554acfd6ad976}{TARGET\+\_\+\+FPS}})
+\begin{DoxyCompactList}\small\item\em Durée minimale d\textquotesingle{}une frame en millisecondes. (1000ms / 60fps ≈ 16ms). Utilisé pour la pause (sleep) en fin de boucle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\doxysubsection{Detailed Description}
+Configuration globale et constantes du jeu. 
+
+Ce fichier définit les dimensions logiques (indépendantes de l\textquotesingle{}écran), les limites de mémoire (tableaux statiques) et la gestion du temps (FPS). Il est inclus par le Modèle, la Vue et le Contrôleur. 
+
+\label{doc-define-members}
+\Hypertarget{common_8h_doc-define-members}
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{common_8h_a33fabd29c10aabcb416dfbf5c84d3e08}\index{common.h@{common.h}!FRAME\_DELAY@{FRAME\_DELAY}}
+\index{FRAME\_DELAY@{FRAME\_DELAY}!common.h@{common.h}}
+\doxysubsubsection{\texorpdfstring{FRAME\_DELAY}{FRAME\_DELAY}}
+{\footnotesize\ttfamily \label{common_8h_a33fabd29c10aabcb416dfbf5c84d3e08} 
+\#define FRAME\+\_\+\+DELAY~(1000 / \mbox{\hyperlink{common_8h_acef24ae9a88131f27f1554acfd6ad976}{TARGET\+\_\+\+FPS}})}
+
+
+
+Durée minimale d\textquotesingle{}une frame en millisecondes. (1000ms / 60fps ≈ 16ms). Utilisé pour la pause (sleep) en fin de boucle. 
+
+
+\begin{DoxyItemize}
+\item 
+\end{DoxyItemize}\Hypertarget{common_8h_a4331843c2698da5ccb18562eb1485681}\index{common.h@{common.h}!MAX\_BULLETS@{MAX\_BULLETS}}
+\index{MAX\_BULLETS@{MAX\_BULLETS}!common.h@{common.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_BULLETS}{MAX\_BULLETS}}
+{\footnotesize\ttfamily \label{common_8h_a4331843c2698da5ccb18562eb1485681} 
+\#define MAX\+\_\+\+BULLETS~100}
+
+
+
+Nombre maximum de projectiles à l\textquotesingle{}écran. Cumule les tirs du joueur et ceux des ennemis. 
+
+
+\begin{DoxyItemize}
+\item 
+\end{DoxyItemize}\Hypertarget{common_8h_a544651f3405cff79c40d898a8e54f507}\index{common.h@{common.h}!MAX\_ENEMIES@{MAX\_ENEMIES}}
+\index{MAX\_ENEMIES@{MAX\_ENEMIES}!common.h@{common.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_ENEMIES}{MAX\_ENEMIES}}
+{\footnotesize\ttfamily \label{common_8h_a544651f3405cff79c40d898a8e54f507} 
+\#define MAX\+\_\+\+ENEMIES~60}
+
+
+
+Nombre maximum d\textquotesingle{}ennemis actifs simultanément. (Prévision large pour une grille standard d\textquotesingle{}envahisseurs). 
+
+
+\begin{DoxyItemize}
+\item 
+\end{DoxyItemize}

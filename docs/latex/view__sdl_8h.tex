@@ -1,0 +1,120 @@
+\doxysection{include/view\+\_\+sdl.h File Reference}
+\hypertarget{view__sdl_8h}{}\label{view__sdl_8h}\index{include/view\_sdl.h@{include/view\_sdl.h}}
+
+
+Implémentation Concrète de la Vue Graphique (SDL3).  
+
+
+{\ttfamily \#include "{}view\+\_\+interface.\+h"{}}\newline
+{\ttfamily \#include $<$SDL3/\+SDL.\+h$>$}\newline
+{\ttfamily \#include $<$SDL3\+\_\+image/\+SDL\+\_\+image.\+h$>$}\newline
+{\ttfamily \#include $<$SDL3\+\_\+ttf/\+SDL\+\_\+ttf.\+h$>$}\newline
+{\ttfamily \#include $<$SDL3\+\_\+mixer/\+SDL\+\_\+mixer.\+h$>$}\newline
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structGameTextures}{Game\+Textures}}
+\begin{DoxyCompactList}\small\item\em Gestionnaire de Textures. Contient tous les pointeurs {\ttfamily SDL\+\_\+\+Texture\texorpdfstring{$\ast$}{*}} chargés en mémoire GPU. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structGameAudio}{Game\+Audio}}
+\begin{DoxyCompactList}\small\item\em Gestionnaire Audio. Contient les sons (SFX) et musiques chargés via SDL3\+\_\+mixer. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structSDLContext}{SDLContext}}
+\begin{DoxyCompactList}\small\item\em Contexte Global SDL. Structure "{}\+God Object"{} passée à toutes les fonctions de rendu SDL. Regroupe la fenêtre, le renderer, et les assets chargés. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{Indent}\textbf{ Paramètres Fenêtre \& HUD}\par
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{view__sdl_8h_a2e6ef411e0ff00ad889788b6cde701b5}\label{view__sdl_8h_a2e6ef411e0ff00ad889788b6cde701b5} 
+\#define {\bfseries WIN\+\_\+\+WIDTH}~1280
+\begin{DoxyCompactList}\small\item\em Largeur de la fenêtre SDL en pixels. \end{DoxyCompactList}\item 
+\Hypertarget{view__sdl_8h_a0a33b1743038db1adbbf1045aa839b38}\label{view__sdl_8h_a0a33b1743038db1adbbf1045aa839b38} 
+\#define {\bfseries WIN\+\_\+\+HEIGHT}~768
+\begin{DoxyCompactList}\small\item\em Hauteur de la fenêtre SDL en pixels. \end{DoxyCompactList}\item 
+\Hypertarget{view__sdl_8h_aab251024ebdb33ef4ec7d360769255fd}\label{view__sdl_8h_aab251024ebdb33ef4ec7d360769255fd} 
+\#define {\bfseries MAX\+\_\+\+LIVES\+\_\+\+DISPLAY}~3
+\begin{DoxyCompactList}\small\item\em Nombre max de cœurs affichés dans l\textquotesingle{}interface. \end{DoxyCompactList}\item 
+\Hypertarget{view__sdl_8h_ad84aebf1d36bcf67ef6c8ff164861ebb}\label{view__sdl_8h_ad84aebf1d36bcf67ef6c8ff164861ebb} 
+\#define {\bfseries HEART\+\_\+\+UI\+\_\+\+SIZE}~45
+\begin{DoxyCompactList}\small\item\em Taille (carrée) de l\textquotesingle{}icône cœur en pixels. \end{DoxyCompactList}\item 
+\Hypertarget{view__sdl_8h_ab9d72239decba2335735eb99505add33}\label{view__sdl_8h_ab9d72239decba2335735eb99505add33} 
+\#define {\bfseries HEART\+\_\+\+SPACING}~5
+\begin{DoxyCompactList}\small\item\em Espace entre les cœurs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Chemins des Assets \+: Entités}\par
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{view__sdl_8h_a638892ed3e3861dc11b68a8eba6a0451}\label{view__sdl_8h_a638892ed3e3861dc11b68a8eba6a0451} 
+\#define {\bfseries IMG\+\_\+\+PLAYER}~"{}assets/aliens/space\+\_\+player.\+bmp"{}
+\begin{DoxyCompactList}\small\item\em Sprite du vaisseau joueur. \end{DoxyCompactList}\item 
+\Hypertarget{view__sdl_8h_a45bfb19c895c16898179c801ac058222}\label{view__sdl_8h_a45bfb19c895c16898179c801ac058222} 
+\#define {\bfseries IMG\+\_\+\+UFO}~"{}assets/aliens/space\+\_\+\+UFO.\+bmp"{}
+\begin{DoxyCompactList}\small\item\em Sprite de l\textquotesingle{}OVNI bonus. \end{DoxyCompactList}\item 
+\Hypertarget{view__sdl_8h_a03cc74ddbdc6a689fd893196b5a343d0}\label{view__sdl_8h_a03cc74ddbdc6a689fd893196b5a343d0} 
+\#define {\bfseries IMG\+\_\+\+ENEMY1\+\_\+A}~"{}assets/aliens/alien\+\_\+\+A1.\+bmp"{}
+\begin{DoxyCompactList}\small\item\em Ennemi Type 1 -\/ Frame A (Pieuvre). \end{DoxyCompactList}\item 
+\Hypertarget{view__sdl_8h_a37bf23fd02bd11833b0c6a6a573b8303}\label{view__sdl_8h_a37bf23fd02bd11833b0c6a6a573b8303} 
+\#define {\bfseries IMG\+\_\+\+ENEMY1\+\_\+B}~"{}assets/aliens/alien\+\_\+\+A2.\+bmp"{}
+\begin{DoxyCompactList}\small\item\em Ennemi Type 1 -\/ Frame B (Pieuvre). \end{DoxyCompactList}\item 
+\Hypertarget{view__sdl_8h_a1d97bfb4f0701b3ccd2f59250853b1a2}\label{view__sdl_8h_a1d97bfb4f0701b3ccd2f59250853b1a2} 
+\#define {\bfseries IMG\+\_\+\+ENEMY2\+\_\+A}~"{}assets/aliens/alien\+\_\+\+B1.\+bmp"{}
+\begin{DoxyCompactList}\small\item\em Ennemi Type 2 -\/ Frame A (Crabe). \end{DoxyCompactList}\item 
+\Hypertarget{view__sdl_8h_aec46a548aa67592e482ef3a00edf0036}\label{view__sdl_8h_aec46a548aa67592e482ef3a00edf0036} 
+\#define {\bfseries IMG\+\_\+\+ENEMY2\+\_\+B}~"{}assets/aliens/alien\+\_\+\+B2.\+bmp"{}
+\begin{DoxyCompactList}\small\item\em Ennemi Type 2 -\/ Frame B (Crabe). \end{DoxyCompactList}\item 
+\Hypertarget{view__sdl_8h_ab7d1035b11cdd2a7bf5192f525fbd880}\label{view__sdl_8h_ab7d1035b11cdd2a7bf5192f525fbd880} 
+\#define {\bfseries IMG\+\_\+\+ENEMY3\+\_\+A}~"{}assets/aliens/alien\+\_\+\+C1.\+bmp"{}
+\begin{DoxyCompactList}\small\item\em Ennemi Type 3 -\/ Frame A (Calamar). \end{DoxyCompactList}\item 
+\Hypertarget{view__sdl_8h_afb2383e0db33dd400ff8b2f5140549c0}\label{view__sdl_8h_afb2383e0db33dd400ff8b2f5140549c0} 
+\#define {\bfseries IMG\+\_\+\+ENEMY3\+\_\+B}~"{}assets/aliens/alien\+\_\+\+C2.\+bmp"{}
+\begin{DoxyCompactList}\small\item\em Ennemi Type 3 -\/ Frame B (Calamar). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Chemins des Assets \+: Environnement \& UI}\par
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{view__sdl_8h_ae88945259d8ca64e0eac4af20be3ea00}\label{view__sdl_8h_ae88945259d8ca64e0eac4af20be3ea00} 
+\#define {\bfseries IMG\+\_\+\+BG\+\_\+\+MENU}~"{}assets/backgrounds/bg\+\_\+menu\+\_\+1.\+bmp"{}
+\begin{DoxyCompactList}\small\item\em Fond d\textquotesingle{}écran du menu principal (variante 1). \end{DoxyCompactList}\item 
+\Hypertarget{view__sdl_8h_a9049a9571f99e21282a6c1ec23ab58c7}\label{view__sdl_8h_a9049a9571f99e21282a6c1ec23ab58c7} 
+\#define {\bfseries IMG\+\_\+\+BG\+\_\+\+MENU\+\_\+1}~"{}assets/backgrounds/bg\+\_\+menu.\+bmp"{}
+\begin{DoxyCompactList}\small\item\em Fond d\textquotesingle{}écran du menu principal (variante 2). \end{DoxyCompactList}\item 
+\Hypertarget{view__sdl_8h_a5e2f44c6560edc56131ce5eea701c262}\label{view__sdl_8h_a5e2f44c6560edc56131ce5eea701c262} 
+\#define {\bfseries IMG\+\_\+\+BG\+\_\+\+GAME}~"{}assets/backgrounds/background.\+bmp"{}
+\begin{DoxyCompactList}\small\item\em Fond d\textquotesingle{}écran pendant le jeu. \end{DoxyCompactList}\item 
+\Hypertarget{view__sdl_8h_a6dc5bda9feb182db1792d9fd2a6d099e}\label{view__sdl_8h_a6dc5bda9feb182db1792d9fd2a6d099e} 
+\#define {\bfseries IMG\+\_\+\+HEART\+\_\+\+FULL}~"{}assets/hearts/heart\+\_\+full.\+bmp"{}
+\begin{DoxyCompactList}\small\item\em Icône de cœur plein (vie restante). \end{DoxyCompactList}\item 
+\Hypertarget{view__sdl_8h_ae1407b93e505f5fb75f8651030a1f15d}\label{view__sdl_8h_ae1407b93e505f5fb75f8651030a1f15d} 
+\#define {\bfseries IMG\+\_\+\+HEART\+\_\+\+EMPTY}~"{}assets/hearts/heart\+\_\+empty.\+bmp"{}
+\begin{DoxyCompactList}\small\item\em Icône de cœur vide (vie perdue). \end{DoxyCompactList}\item 
+\Hypertarget{view__sdl_8h_af326d9b4cced6fd44a9f9567dc666014}\label{view__sdl_8h_af326d9b4cced6fd44a9f9567dc666014} 
+\#define {\bfseries FONT\+\_\+\+PATH}~"{}assets/fonts/Libertinus\+Serif\+Display-\/Regular.\+ttf"{}
+\begin{DoxyCompactList}\small\item\em Police True\+Type utilisée. \end{DoxyCompactList}\item 
+\Hypertarget{view__sdl_8h_aa968a61524f9ed159c4c5464cb26dd41}\label{view__sdl_8h_aa968a61524f9ed159c4c5464cb26dd41} 
+\#define {\bfseries FONT\+\_\+\+SIZE}~38
+\begin{DoxyCompactList}\small\item\em Taille de police par défaut. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Chemins des Assets \+: Effets (FX)}\par
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{view__sdl_8h_ab6666a07961deb56c994a2b35301fc78}\label{view__sdl_8h_ab6666a07961deb56c994a2b35301fc78} 
+\#define {\bfseries IMG\+\_\+\+EXPLOSION\+\_\+A}~"{}assets/explosions/player\+Explosion\+A.\+bmp"{}
+\begin{DoxyCompactList}\small\item\em Explosion Frame A. \end{DoxyCompactList}\item 
+\Hypertarget{view__sdl_8h_a087e7aef62212cd8cf02e154174d88e3}\label{view__sdl_8h_a087e7aef62212cd8cf02e154174d88e3} 
+\#define {\bfseries IMG\+\_\+\+EXPLOSION\+\_\+B}~"{}assets/explosions/player\+Explosion\+B.\+bmp"{}
+\begin{DoxyCompactList}\small\item\em Explosion Frame B. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{view__sdl_8h_add6f7a57727a5ac73a77ae0724a4156e}\label{view__sdl_8h_add6f7a57727a5ac73a77ae0724a4156e} 
+const \mbox{\hyperlink{structViewInterface}{View\+Interface}} {\bfseries view\+\_\+sdl}
+\begin{DoxyCompactList}\small\item\em Instance concrète de l\textquotesingle{}interface View pour SDL. Cette variable permet au {\ttfamily \doxylink{main_8c}{main.\+c}} d\textquotesingle{}utiliser SDL sans connaître les détails ci-\/dessus. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}\textbf{ Palette de Couleurs}\par
+{\em Couleurs statiques utilisées pour le texte et les formes géométriques. }\end{Indent}
+
+
+\doxysubsection{Detailed Description}
+Implémentation Concrète de la Vue Graphique (SDL3). 
+
+Ce module expose l\textquotesingle{}instance de l\textquotesingle{}interface utilisant la {\bfseries{Simple Direct\+Media Layer (SDL3)}}. C\textquotesingle{}est ici que sont définies les structures contenant les "{}vrais"{} pointeurs vers les fenêtres, textures et sons.
+
+Le fichier regroupe aussi tous les chemins d\textquotesingle{}accès aux assets (Images/\+Sons). 

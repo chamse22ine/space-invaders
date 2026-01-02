@@ -1,0 +1,46 @@
+\doxysection{SDLContext Struct Reference}
+\hypertarget{structSDLContext}{}\label{structSDLContext}\index{SDLContext@{SDLContext}}
+
+
+Contexte Global SDL. Structure "{}\+God Object"{} passée à toutes les fonctions de rendu SDL. Regroupe la fenêtre, le renderer, et les assets chargés.  
+
+
+
+
+{\ttfamily \#include $<$view\+\_\+sdl.\+h$>$}
+
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structSDLContext_a08645f3fcf4ddd17ed7fbc8bc3862115}\label{structSDLContext_a08645f3fcf4ddd17ed7fbc8bc3862115} 
+SDL\+\_\+\+Window \texorpdfstring{$\ast$}{*} {\bfseries window}
+\begin{DoxyCompactList}\small\item\em La fenêtre OS. \end{DoxyCompactList}\item 
+\Hypertarget{structSDLContext_a5707770bafe87f7c4e5843d7739ee534}\label{structSDLContext_a5707770bafe87f7c4e5843d7739ee534} 
+SDL\+\_\+\+Renderer \texorpdfstring{$\ast$}{*} {\bfseries renderer}
+\begin{DoxyCompactList}\small\item\em Le contexte de rendu 2D (GPU). \end{DoxyCompactList}\item 
+\Hypertarget{structSDLContext_a0a701ea1f7d9ec19edaa1cbb529dac28}\label{structSDLContext_a0a701ea1f7d9ec19edaa1cbb529dac28} 
+TTF\+\_\+\+Font \texorpdfstring{$\ast$}{*} {\bfseries font}
+\begin{DoxyCompactList}\small\item\em Police standard. \end{DoxyCompactList}\item 
+\Hypertarget{structSDLContext_ae25b6e5972ea187143d8d560abeed261}\label{structSDLContext_ae25b6e5972ea187143d8d560abeed261} 
+TTF\+\_\+\+Font \texorpdfstring{$\ast$}{*} {\bfseries font\+\_\+title}
+\begin{DoxyCompactList}\small\item\em Police titre (grande). \end{DoxyCompactList}\item 
+\Hypertarget{structSDLContext_a7121575618d42d78276a26053f92dfe5}\label{structSDLContext_a7121575618d42d78276a26053f92dfe5} 
+\mbox{\hyperlink{structGameTextures}{Game\+Textures}} {\bfseries tex}
+\begin{DoxyCompactList}\small\item\em Conteneur des images. \end{DoxyCompactList}\item 
+\Hypertarget{structSDLContext_aa17ef0ecbb23278876efd3bc1eef02bd}\label{structSDLContext_aa17ef0ecbb23278876efd3bc1eef02bd} 
+\mbox{\hyperlink{structGameAudio}{Game\+Audio}} {\bfseries sfx}
+\begin{DoxyCompactList}\small\item\em Conteneur des sons. \end{DoxyCompactList}\item 
+\Hypertarget{structSDLContext_acdf38e4033409d7bed224e7390221f0b}\label{structSDLContext_acdf38e4033409d7bed224e7390221f0b} 
+MIX\+\_\+\+Mixer \texorpdfstring{$\ast$}{*} {\bfseries mixer}
+\begin{DoxyCompactList}\small\item\em Instance principale du mixeur audio SDL3. \end{DoxyCompactList}\item 
+\Hypertarget{structSDLContext_a40cdd51783d4c4da90b3c96764fde2dc}\label{structSDLContext_a40cdd51783d4c4da90b3c96764fde2dc} 
+int {\bfseries ufo\+\_\+channel}
+\begin{DoxyCompactList}\small\item\em ID du canal audio OVNI (si gestion par canaux). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Contexte Global SDL. Structure "{}\+God Object"{} passée à toutes les fonctions de rendu SDL. Regroupe la fenêtre, le renderer, et les assets chargés. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{view__sdl_8h}{view\+\_\+sdl.\+h}}\end{DoxyCompactItemize}

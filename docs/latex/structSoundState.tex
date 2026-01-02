@@ -1,0 +1,49 @@
+\doxysection{Sound\+State Struct Reference}
+\hypertarget{structSoundState}{}\label{structSoundState}\index{SoundState@{SoundState}}
+
+
+Système de drapeaux (Flags) Audio. Pattern "{}\+Fire-\/and-\/\+Forget"{} \+: Le Modèle demande un son (true), la Vue le joue et reset (false).  
+
+
+
+
+{\ttfamily \#include $<$model.\+h$>$}
+
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structSoundState_a8c97c24166dba4ee02167bad2e68777f}\label{structSoundState_a8c97c24166dba4ee02167bad2e68777f} 
+bool {\bfseries play\+\_\+shoot}
+\begin{DoxyCompactList}\small\item\em Demande de bruit de tir. \end{DoxyCompactList}\item 
+\Hypertarget{structSoundState_a0d971862ac745fd5729eb3dfe578a257}\label{structSoundState_a0d971862ac745fd5729eb3dfe578a257} 
+bool {\bfseries play\+\_\+invader\+\_\+killed}
+\begin{DoxyCompactList}\small\item\em Demande de bruit de mort alien. \end{DoxyCompactList}\item 
+\Hypertarget{structSoundState_a58aa520a4fef2e4f69a844920b78a82f}\label{structSoundState_a58aa520a4fef2e4f69a844920b78a82f} 
+bool {\bfseries play\+\_\+player\+\_\+explosion}
+\begin{DoxyCompactList}\small\item\em Demande de bruit de mort joueur. \end{DoxyCompactList}\item 
+\Hypertarget{structSoundState_abe37c18ca6adef2fd2228635134d9eb4}\label{structSoundState_abe37c18ca6adef2fd2228635134d9eb4} 
+bool {\bfseries play\+\_\+select\+\_\+sound}
+\begin{DoxyCompactList}\small\item\em Demande de "{}\+Bip"{} menu. \end{DoxyCompactList}\item 
+\Hypertarget{structSoundState_a8ad4c017e43124d447667a170ba73b38}\label{structSoundState_a8ad4c017e43124d447667a170ba73b38} 
+bool {\bfseries play\+\_\+game\+\_\+over}
+\begin{DoxyCompactList}\small\item\em Demande de jingle défaite. \end{DoxyCompactList}\item 
+\Hypertarget{structSoundState_a7c0ff26249298357566d6bda1c453c71}\label{structSoundState_a7c0ff26249298357566d6bda1c453c71} 
+bool {\bfseries play\+\_\+level\+\_\+up}
+\begin{DoxyCompactList}\small\item\em Demande de jingle niveau suivant. \end{DoxyCompactList}\item 
+\Hypertarget{structSoundState_ae0fcb32b0c13b6d20d18318834485beb}\label{structSoundState_ae0fcb32b0c13b6d20d18318834485beb} 
+bool {\bfseries play\+\_\+beat}
+\begin{DoxyCompactList}\small\item\em Trigger pour le rythme "{}\+Cœur"{} des aliens qui accélère. \end{DoxyCompactList}\item 
+\Hypertarget{structSoundState_a3801ca088b2ede9472019165fbb8bc44}\label{structSoundState_a3801ca088b2ede9472019165fbb8bc44} 
+int {\bfseries beat\+\_\+index}
+\begin{DoxyCompactList}\small\item\em Note actuelle du rythme (0, 1, 2, 3). \end{DoxyCompactList}\item 
+\Hypertarget{structSoundState_ab0dae8c8ae0303f0f0480a0ffbcb7a81}\label{structSoundState_ab0dae8c8ae0303f0f0480a0ffbcb7a81} 
+bool {\bfseries ufo\+\_\+loop\+ING}
+\begin{DoxyCompactList}\small\item\em État continu \+: L\textquotesingle{}OVNI est présent (Son moteur en boucle). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Système de drapeaux (Flags) Audio. Pattern "{}\+Fire-\/and-\/\+Forget"{} \+: Le Modèle demande un son (true), la Vue le joue et reset (false). 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{model_8h}{model.\+h}}\end{DoxyCompactItemize}

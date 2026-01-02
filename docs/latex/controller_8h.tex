@@ -1,0 +1,97 @@
+\doxysection{include/controller.h File Reference}
+\hypertarget{controller_8h}{}\label{controller_8h}\index{include/controller.h@{include/controller.h}}
+
+
+Définition de l\textquotesingle{}interface de commande (Controller).  
+
+
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{controller_8h_abc5a0df439bf92177bc39309fe831280}{Game\+Command}} \{ \newline
+\mbox{\hyperlink{controller_8h_abc5a0df439bf92177bc39309fe831280a93c1ce1fac89139d9f4df4b6db21b1cc}{CMD\+\_\+\+NONE}}
+, \mbox{\hyperlink{controller_8h_abc5a0df439bf92177bc39309fe831280a22507047922c1ce8c921c8d193e67126}{CMD\+\_\+\+PAUSE}}
+, \mbox{\hyperlink{controller_8h_abc5a0df439bf92177bc39309fe831280a423988140dabaa461f133924ca772294}{CMD\+\_\+\+EXIT}}
+, \mbox{\hyperlink{controller_8h_abc5a0df439bf92177bc39309fe831280a048a54c3f471758630a798c32e569a61}{CMD\+\_\+\+MOVE\+\_\+\+LEFT}}
+, \newline
+\mbox{\hyperlink{controller_8h_abc5a0df439bf92177bc39309fe831280a2c4169a621294eff31ae915846dbd65a}{CMD\+\_\+\+MOVE\+\_\+\+RIGHT}}
+, \mbox{\hyperlink{controller_8h_abc5a0df439bf92177bc39309fe831280aa60785bae96972dd147296dc3b06e7d2}{CMD\+\_\+\+SHOOT}}
+, \mbox{\hyperlink{controller_8h_abc5a0df439bf92177bc39309fe831280ac1e873d5b926f3b62f92a4679bcc6cef}{CMD\+\_\+\+UP}}
+, \mbox{\hyperlink{controller_8h_abc5a0df439bf92177bc39309fe831280a3077a6750ccd3147500875d62961a6f1}{CMD\+\_\+\+DOWN}}
+, \newline
+\mbox{\hyperlink{controller_8h_abc5a0df439bf92177bc39309fe831280a6209b9b123c01914b557bb921f334f88}{CMD\+\_\+\+LEFT}}
+, \mbox{\hyperlink{controller_8h_abc5a0df439bf92177bc39309fe831280a9f69104487ae00ae3f63308c4cd7ce58}{CMD\+\_\+\+RIGHT}}
+, \mbox{\hyperlink{controller_8h_abc5a0df439bf92177bc39309fe831280a958f04212c5e4a3510a98dd4ddc9cacc}{CMD\+\_\+\+RETURN}}
+, \mbox{\hyperlink{controller_8h_abc5a0df439bf92177bc39309fe831280a9cdf8298bbac9d1964121e0791f0742d}{CMD\+\_\+\+BACKSPACE}}
+ \}
+\begin{DoxyCompactList}\small\item\em Liste des commandes interprétables par le Contrôleur. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Définition de l\textquotesingle{}interface de commande (Controller). 
+
+Ce fichier centralise toutes les actions possibles que le joueur peut effectuer. Il sert d\textquotesingle{}interface normalisée entre les entrées physiques et la logique du jeu. Cette structure garantit une grande évolutivité \+: elle permet d\textquotesingle{}ajouter facilement le support d\textquotesingle{}une manette (Gamepad) ou de reconfigurer les touches sans jamais avoir à modifier le code du Modèle. 
+
+\label{doc-enum-members}
+\Hypertarget{controller_8h_doc-enum-members}
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{controller_8h_abc5a0df439bf92177bc39309fe831280}\index{controller.h@{controller.h}!GameCommand@{GameCommand}}
+\index{GameCommand@{GameCommand}!controller.h@{controller.h}}
+\doxysubsubsection{\texorpdfstring{GameCommand}{GameCommand}}
+{\footnotesize\ttfamily \label{controller_8h_abc5a0df439bf92177bc39309fe831280} 
+enum \mbox{\hyperlink{controller_8h_abc5a0df439bf92177bc39309fe831280}{Game\+Command}}}
+
+
+
+Liste des commandes interprétables par le Contrôleur. 
+
+Le Modèle reçoit uniquement ces valeurs, ignorant si elles proviennent d\textquotesingle{}un clavier, d\textquotesingle{}une manette ou d\textquotesingle{}un autre périphérique. \begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CMD\_NONE@{CMD\_NONE}!controller.h@{controller.h}}\index{controller.h@{controller.h}!CMD\_NONE@{CMD\_NONE}}}\Hypertarget{controller_8h_abc5a0df439bf92177bc39309fe831280a93c1ce1fac89139d9f4df4b6db21b1cc}\label{controller_8h_abc5a0df439bf92177bc39309fe831280a93c1ce1fac89139d9f4df4b6db21b1cc} 
+CMD\+\_\+\+NONE&Aucune action (état neutre ou touche relâchée). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CMD\_PAUSE@{CMD\_PAUSE}!controller.h@{controller.h}}\index{controller.h@{controller.h}!CMD\_PAUSE@{CMD\_PAUSE}}}\Hypertarget{controller_8h_abc5a0df439bf92177bc39309fe831280a22507047922c1ce8c921c8d193e67126}\label{controller_8h_abc5a0df439bf92177bc39309fe831280a22507047922c1ce8c921c8d193e67126} 
+CMD\+\_\+\+PAUSE&Signal de pause ou reprise (ex\+: Touche P, Bouton Start). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CMD\_EXIT@{CMD\_EXIT}!controller.h@{controller.h}}\index{controller.h@{controller.h}!CMD\_EXIT@{CMD\_EXIT}}}\Hypertarget{controller_8h_abc5a0df439bf92177bc39309fe831280a423988140dabaa461f133924ca772294}\label{controller_8h_abc5a0df439bf92177bc39309fe831280a423988140dabaa461f133924ca772294} 
+CMD\+\_\+\+EXIT&Demande de fermeture immédiate ou retour forcé. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CMD\_MOVE\_LEFT@{CMD\_MOVE\_LEFT}!controller.h@{controller.h}}\index{controller.h@{controller.h}!CMD\_MOVE\_LEFT@{CMD\_MOVE\_LEFT}}}\Hypertarget{controller_8h_abc5a0df439bf92177bc39309fe831280a048a54c3f471758630a798c32e569a61}\label{controller_8h_abc5a0df439bf92177bc39309fe831280a048a54c3f471758630a798c32e569a61} 
+CMD\+\_\+\+MOVE\+\_\+\+LEFT&Ordre de déplacement continu vers la gauche. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CMD\_MOVE\_RIGHT@{CMD\_MOVE\_RIGHT}!controller.h@{controller.h}}\index{controller.h@{controller.h}!CMD\_MOVE\_RIGHT@{CMD\_MOVE\_RIGHT}}}\Hypertarget{controller_8h_abc5a0df439bf92177bc39309fe831280a2c4169a621294eff31ae915846dbd65a}\label{controller_8h_abc5a0df439bf92177bc39309fe831280a2c4169a621294eff31ae915846dbd65a} 
+CMD\+\_\+\+MOVE\+\_\+\+RIGHT&Ordre de déplacement continu vers la droite. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CMD\_SHOOT@{CMD\_SHOOT}!controller.h@{controller.h}}\index{controller.h@{controller.h}!CMD\_SHOOT@{CMD\_SHOOT}}}\Hypertarget{controller_8h_abc5a0df439bf92177bc39309fe831280aa60785bae96972dd147296dc3b06e7d2}\label{controller_8h_abc5a0df439bf92177bc39309fe831280aa60785bae96972dd147296dc3b06e7d2} 
+CMD\+\_\+\+SHOOT&Ordre de tir (ex\+: Barre Espace, Bouton A/X). \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CMD\_UP@{CMD\_UP}!controller.h@{controller.h}}\index{controller.h@{controller.h}!CMD\_UP@{CMD\_UP}}}\Hypertarget{controller_8h_abc5a0df439bf92177bc39309fe831280ac1e873d5b926f3b62f92a4679bcc6cef}\label{controller_8h_abc5a0df439bf92177bc39309fe831280ac1e873d5b926f3b62f92a4679bcc6cef} 
+CMD\+\_\+\+UP&Monter dans la liste / Option précédente. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CMD\_DOWN@{CMD\_DOWN}!controller.h@{controller.h}}\index{controller.h@{controller.h}!CMD\_DOWN@{CMD\_DOWN}}}\Hypertarget{controller_8h_abc5a0df439bf92177bc39309fe831280a3077a6750ccd3147500875d62961a6f1}\label{controller_8h_abc5a0df439bf92177bc39309fe831280a3077a6750ccd3147500875d62961a6f1} 
+CMD\+\_\+\+DOWN&Descendre dans la liste / Option suivante. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CMD\_LEFT@{CMD\_LEFT}!controller.h@{controller.h}}\index{controller.h@{controller.h}!CMD\_LEFT@{CMD\_LEFT}}}\Hypertarget{controller_8h_abc5a0df439bf92177bc39309fe831280a6209b9b123c01914b557bb921f334f88}\label{controller_8h_abc5a0df439bf92177bc39309fe831280a6209b9b123c01914b557bb921f334f88} 
+CMD\+\_\+\+LEFT&Diminuer une valeur / Navigation gauche. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CMD\_RIGHT@{CMD\_RIGHT}!controller.h@{controller.h}}\index{controller.h@{controller.h}!CMD\_RIGHT@{CMD\_RIGHT}}}\Hypertarget{controller_8h_abc5a0df439bf92177bc39309fe831280a9f69104487ae00ae3f63308c4cd7ce58}\label{controller_8h_abc5a0df439bf92177bc39309fe831280a9f69104487ae00ae3f63308c4cd7ce58} 
+CMD\+\_\+\+RIGHT&Augmenter une valeur / Navigation droite. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CMD\_RETURN@{CMD\_RETURN}!controller.h@{controller.h}}\index{controller.h@{controller.h}!CMD\_RETURN@{CMD\_RETURN}}}\Hypertarget{controller_8h_abc5a0df439bf92177bc39309fe831280a958f04212c5e4a3510a98dd4ddc9cacc}\label{controller_8h_abc5a0df439bf92177bc39309fe831280a958f04212c5e4a3510a98dd4ddc9cacc} 
+CMD\+\_\+\+RETURN&Valider une sélection / Entrer dans un menu. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CMD\_BACKSPACE@{CMD\_BACKSPACE}!controller.h@{controller.h}}\index{controller.h@{controller.h}!CMD\_BACKSPACE@{CMD\_BACKSPACE}}}\Hypertarget{controller_8h_abc5a0df439bf92177bc39309fe831280a9cdf8298bbac9d1964121e0791f0742d}\label{controller_8h_abc5a0df439bf92177bc39309fe831280a9cdf8298bbac9d1964121e0791f0742d} 
+CMD\+\_\+\+BACKSPACE&Effacer un caractère (Correction lors de la sauvegarde). \\
+\hline
+
+\end{DoxyEnumFields}

@@ -1,0 +1,31 @@
+\doxysection{view\+\_\+interface.\+h}
+\hypertarget{view__interface_8h_source}{}\label{view__interface_8h_source}\index{include/view\_interface.h@{include/view\_interface.h}}
+\mbox{\hyperlink{view__interface_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#ifndef\ VIEW\_INTERFACE\_H}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ VIEW\_INTERFACE\_H}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{model_8h}{model.h}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{controller_8h}{controller.h}}"{}}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{comment}{//\ ============================================================================}}
+\DoxyCodeLine{00020\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ CONTRAT\ D'INTERFACE}}
+\DoxyCodeLine{00021\ \textcolor{comment}{//\ ============================================================================}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00031\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ bool\ (*\mbox{\hyperlink{structViewInterface_a4a65a72b137a8a28a39a6ac0ba410508}{init}})(void);}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00044\ \ \ \ \ void\ (*\mbox{\hyperlink{structViewInterface_adf0fcaa2fafda7ab6197f4eee1775bab}{close}})(void);}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00053\ \ \ \ \ void\ (*\mbox{\hyperlink{structViewInterface_aa78cae014c7a327610e2cf94b215a0c7}{render}})(\textcolor{keyword}{const}\ \mbox{\hyperlink{structGameModel}{GameModel}}\ *model);}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{controller_8h_abc5a0df439bf92177bc39309fe831280}{GameCommand}}\ (*\mbox{\hyperlink{structViewInterface_ab84c4c093f2ea4df2ca75a589b8fefb1}{get\_input}})(\mbox{\hyperlink{structGameModel}{GameModel}}\ *model);}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \}\ \mbox{\hyperlink{structViewInterface}{ViewInterface}};}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VIEW\_INTERFACE\_H}}
+
+\end{DoxyCode}

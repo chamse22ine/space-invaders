@@ -1,0 +1,22 @@
+\doxysection{include/view\+\_\+interface.h File Reference}
+\hypertarget{view__interface_8h}{}\label{view__interface_8h}\index{include/view\_interface.h@{include/view\_interface.h}}
+
+
+Définition de l\textquotesingle{}interface graphique abstraite (V-\/\+Table).  
+
+
+{\ttfamily \#include "{}model.\+h"{}}\newline
+{\ttfamily \#include "{}controller.\+h"{}}\newline
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structViewInterface}{View\+Interface}}
+\begin{DoxyCompactList}\small\item\em Structure regroupant les méthodes virtuelles (API) d\textquotesingle{}une Vue. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Définition de l\textquotesingle{}interface graphique abstraite (V-\/\+Table). 
+
+Ce fichier définit le "{}contrat"{} que toutes les Vues (SDL, Ncurses, Open\+GL...) doivent respecter. Il utilise des pointeurs de fonctions pour simuler le polymorphisme et le pattern "{}\+Strategy"{} en C pur.
+
+Grâce à cette structure, le moteur du jeu (\doxylink{main_8c}{main.\+c}) ne sait pas quelle librairie est utilisée \+: il appelle simplement {\ttfamily view.\+render()} et la magie opère. 

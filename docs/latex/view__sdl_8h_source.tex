@@ -1,0 +1,131 @@
+\doxysection{view\+\_\+sdl.\+h}
+\hypertarget{view__sdl_8h_source}{}\label{view__sdl_8h_source}\index{include/view\_sdl.h@{include/view\_sdl.h}}
+\mbox{\hyperlink{view__sdl_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#ifndef\ VIEW\_SDL\_H}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ VIEW\_SDL\_H}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{view__interface_8h}{view\_interface.h}}"{}}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{comment}{//\ -\/-\/-\/\ Inclusions\ nécessaires\ pour\ les\ types\ SDL3\ -\/-\/-\/}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <SDL3/SDL.h>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <SDL3\_image/SDL\_image.h>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <SDL3\_ttf/SDL\_ttf.h>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <SDL3\_mixer/SDL\_mixer.h>}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{comment}{//\ ============================================================================}}
+\DoxyCodeLine{00024\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ CONSTANTES\ \&\ CONFIGURATION}}
+\DoxyCodeLine{00025\ \textcolor{comment}{//\ ============================================================================}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ SDL\_Color\ COL\_WHITE\ =\ \{255,\ 255,\ 255,\ 255\};}
+\DoxyCodeLine{00032\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ SDL\_Color\ COL\_RED\ =\ \{255,\ 50,\ 50,\ 255\};}
+\DoxyCodeLine{00033\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ SDL\_Color\ COL\_GREEN\ =\ \{50,\ 255,\ 50,\ 255\};}
+\DoxyCodeLine{00034\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ SDL\_Color\ COL\_YELLOW\ =\ \{255,\ 215,\ 0,\ 255\};}
+\DoxyCodeLine{00035\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ SDL\_Color\ COL\_GRAY\ =\ \{150,\ 150,\ 150,\ 255\};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ WIN\_WIDTH\ 1280\ \ \ \ \ \ }}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ WIN\_HEIGHT\ 768\ \ \ \ \ \ }}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ MAX\_LIVES\_DISPLAY\ 3\ }}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ HEART\_UI\_SIZE\ 45\ \ \ \ }}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ HEART\_SPACING\ 5\ \ \ \ \ }}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ IMG\_PLAYER\ "{}assets/aliens/space\_player.bmp"{}\ }}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ IMG\_UFO\ "{}assets/aliens/space\_UFO.bmp"{}\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ IMG\_ENEMY1\_A\ "{}assets/aliens/alien\_A1.bmp"{}\ }}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ IMG\_ENEMY1\_B\ "{}assets/aliens/alien\_A2.bmp"{}\ }}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#define\ IMG\_ENEMY2\_A\ "{}assets/aliens/alien\_B1.bmp"{}\ }}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#define\ IMG\_ENEMY2\_B\ "{}assets/aliens/alien\_B2.bmp"{}\ }}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#define\ IMG\_ENEMY3\_A\ "{}assets/aliens/alien\_C1.bmp"{}\ }}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#define\ IMG\_ENEMY3\_B\ "{}assets/aliens/alien\_C2.bmp"{}\ }}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#define\ IMG\_BG\_MENU\ "{}assets/backgrounds/bg\_menu\_1.bmp"{}\ \ }}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#define\ IMG\_BG\_MENU\_1\ "{}assets/backgrounds/bg\_menu.bmp"{}\ \ }}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#define\ IMG\_BG\_GAME\ "{}assets/backgrounds/background.bmp"{}\ }}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#define\ IMG\_HEART\_FULL\ "{}assets/hearts/heart\_full.bmp"{}\ \ \ }}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#define\ IMG\_HEART\_EMPTY\ "{}assets/hearts/heart\_empty.bmp"{}\ }}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#define\ FONT\_PATH\ "{}assets/fonts/LibertinusSerifDisplay-\/Regular.ttf"{}\ }}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#define\ FONT\_SIZE\ 38\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#define\ IMG\_EXPLOSION\_A\ "{}assets/explosions/playerExplosionA.bmp"{}\ }}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#define\ IMG\_EXPLOSION\_B\ "{}assets/explosions/playerExplosionB.bmp"{}\ }}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \textcolor{comment}{//\ ============================================================================}}
+\DoxyCodeLine{00082\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ STRUCTURES\ DE\ DONNÉES}}
+\DoxyCodeLine{00083\ \textcolor{comment}{//\ ============================================================================}}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00089\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00090\ \{}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Entités\ -\/-\/-\/}}
+\DoxyCodeLine{00092\ \ \ \ \ SDL\_Texture\ *\mbox{\hyperlink{structGameTextures_ab503d9b62d6f122da27229f23180c4ea}{player}};\ }
+\DoxyCodeLine{00093\ \ \ \ \ SDL\_Texture\ *\mbox{\hyperlink{structGameTextures_a5b01d0d4f8053cfb824e0fe68f32b4e5}{bullet}};\ }
+\DoxyCodeLine{00094\ \ \ \ \ SDL\_Texture\ *\mbox{\hyperlink{structGameTextures_a6c2b710235e0b0d4f72e88df6163081f}{ufo}};\ \ \ \ }
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00099\ \ \ \ \ SDL\_Texture\ *\mbox{\hyperlink{structGameTextures_aba53a2031febf333070d6e422a8388f1}{enemies}}[3][2];}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Décors\ -\/-\/-\/}}
+\DoxyCodeLine{00102\ \ \ \ \ SDL\_Texture\ *\mbox{\hyperlink{structGameTextures_ad4d9aaf8aa2b480ca3e498c34c73b014}{bg\_menu}};\ \ \ }
+\DoxyCodeLine{00103\ \ \ \ \ SDL\_Texture\ *\mbox{\hyperlink{structGameTextures_a5d573754b55ca6be1e832295b4553f95}{bg\_menu\_1}};\ }
+\DoxyCodeLine{00104\ \ \ \ \ SDL\_Texture\ *\mbox{\hyperlink{structGameTextures_af3aac17e5aef83d5e1f7a91ff9d3eb7d}{bg\_game}};\ \ \ }
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Interface\ (HUD)\ -\/-\/-\/}}
+\DoxyCodeLine{00107\ \ \ \ \ SDL\_Texture\ *\mbox{\hyperlink{structGameTextures_a666b0b9abed6d87018fd92cd7d5fa12c}{heart\_full}};\ \ }
+\DoxyCodeLine{00108\ \ \ \ \ SDL\_Texture\ *\mbox{\hyperlink{structGameTextures_a79482939c7842a87fa96fac10b38b67e}{heart\_empty}};\ }
+\DoxyCodeLine{00109\ \ \ \ \ SDL\_Texture\ *\mbox{\hyperlink{structGameTextures_a11b4fb01abe7df769088f7de2e000918}{blur}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Effets\ Visuels\ (FX)\ -\/-\/-\/}}
+\DoxyCodeLine{00112\ \ \ \ \ SDL\_Texture\ *\mbox{\hyperlink{structGameTextures_a30ff76fe3a74014ff76012715630e820}{expl\_player}}[2];\ }
+\DoxyCodeLine{00113\ \ \ \ \ SDL\_Texture\ *\mbox{\hyperlink{structGameTextures_a044edaa5b5db37eaf5f0da8293c65167}{expl\_enemy}};\ \ \ \ \ }
+\DoxyCodeLine{00114\ \ \ \ \ SDL\_Texture\ *\mbox{\hyperlink{structGameTextures_aa8f44b892b3f3dadb3dd9bfbf619b20a}{expl\_ufo}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Projectiles\ \&\ Boucliers\ -\/-\/-\/}}
+\DoxyCodeLine{00117\ \ \ \ \ SDL\_Texture\ *\mbox{\hyperlink{structGameTextures_a07896e6a054a97b9aa40401f96c50d35}{missiles}}[4];\ \ \ \ }
+\DoxyCodeLine{00118\ \ \ \ \ SDL\_Texture\ *\mbox{\hyperlink{structGameTextures_a5da73d90a12551a406bdc6f64a9203e8}{projectiles}}[4];\ }
+\DoxyCodeLine{00119\ \ \ \ \ SDL\_Texture\ *\mbox{\hyperlink{structGameTextures_a5253f4fe8534f6a615a9dea6cbfe188e}{shields}}[10];\ \ \ \ }
+\DoxyCodeLine{00120\ \}\ \mbox{\hyperlink{structGameTextures}{GameTextures}};}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00126\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00127\ \{}
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ SFX\ (Bruitages\ courts)\ -\/-\/-\/}}
+\DoxyCodeLine{00129\ \ \ \ \ MIX\_Audio\ *\mbox{\hyperlink{structGameAudio_a3b52af0a25871afee2ee2173c7389973}{shoot}};\ \ \ \ \ }
+\DoxyCodeLine{00130\ \ \ \ \ MIX\_Audio\ *\mbox{\hyperlink{structGameAudio_a8f85e7dcc112b085b712a5635f992324}{killed}};\ \ \ \ }
+\DoxyCodeLine{00131\ \ \ \ \ MIX\_Audio\ *\mbox{\hyperlink{structGameAudio_a3ff32a812a694b331cfa6ac7108df7d5}{explosion}};\ }
+\DoxyCodeLine{00132\ \ \ \ \ MIX\_Audio\ *\mbox{\hyperlink{structGameAudio_ab90f31d2726f13db48d234f728f5ec1a}{ufo}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00133\ \ \ \ \ MIX\_Audio\ *\mbox{\hyperlink{structGameAudio_a2991abbc0590ad7a82520ca964353f7b}{beat}}[4];\ \ \ }
+\DoxyCodeLine{00134\ \ \ \ \ MIX\_Audio\ *\mbox{\hyperlink{structGameAudio_a373373e7e4000c80d930c62abf1da4ff}{game\_over}};\ }
+\DoxyCodeLine{00135\ \ \ \ \ MIX\_Audio\ *\mbox{\hyperlink{structGameAudio_abadcc53bd7cd980a51a4dc0874629b5a}{level\_up}};\ \ }
+\DoxyCodeLine{00136\ \ \ \ \ MIX\_Audio\ *\mbox{\hyperlink{structGameAudio_a37c2dbcb40b62442a222bcc75e43913f}{select}};\ \ \ \ }
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Pistes\ Audio\ (Contrôlables)\ -\/-\/-\/}}
+\DoxyCodeLine{00139\ \ \ \ \ MIX\_Audio\ *\mbox{\hyperlink{structGameAudio_a9bdf21ab7d956edd7526b00b2a3e1cf0}{bg\_music\_data}};\ \ }
+\DoxyCodeLine{00140\ \ \ \ \ MIX\_Track\ *\mbox{\hyperlink{structGameAudio_aeac5f264a651824b7242302d68641cf2}{bg\_music\_track}};\ }
+\DoxyCodeLine{00141\ \ \ \ \ MIX\_Track\ *\mbox{\hyperlink{structGameAudio_a37f97792976361ee4e8cf7d831758f0d}{ufo\_track}};\ \ \ \ \ \ }
+\DoxyCodeLine{00142\ \}\ \mbox{\hyperlink{structGameAudio}{GameAudio}};}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00149\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00150\ \{}
+\DoxyCodeLine{00151\ \ \ \ \ SDL\_Window\ *\mbox{\hyperlink{structSDLContext_a08645f3fcf4ddd17ed7fbc8bc3862115}{window}};\ \ \ \ \ }
+\DoxyCodeLine{00152\ \ \ \ \ SDL\_Renderer\ *\mbox{\hyperlink{structSDLContext_a5707770bafe87f7c4e5843d7739ee534}{renderer}};\ }
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \ \ \ \ TTF\_Font\ *\mbox{\hyperlink{structSDLContext_a0a701ea1f7d9ec19edaa1cbb529dac28}{font}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00155\ \ \ \ \ TTF\_Font\ *\mbox{\hyperlink{structSDLContext_ae25b6e5972ea187143d8d560abeed261}{font\_title}};\ }
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ \ \ \ \ \mbox{\hyperlink{structGameTextures}{GameTextures}}\ \mbox{\hyperlink{structSDLContext_a7121575618d42d78276a26053f92dfe5}{tex}};\ }
+\DoxyCodeLine{00158\ \ \ \ \ \mbox{\hyperlink{structGameAudio}{GameAudio}}\ \mbox{\hyperlink{structSDLContext_aa17ef0ecbb23278876efd3bc1eef02bd}{sfx}};\ \ \ \ }
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00160\ \ \ \ \ MIX\_Mixer\ *\mbox{\hyperlink{structSDLContext_acdf38e4033409d7bed224e7390221f0b}{mixer}};\ }
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structSDLContext_a40cdd51783d4c4da90b3c96764fde2dc}{ufo\_channel}};\ }
+\DoxyCodeLine{00163\ \}\ \mbox{\hyperlink{structSDLContext}{SDLContext}};}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00169\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structViewInterface}{ViewInterface}}\ \mbox{\hyperlink{view__sdl_8c_add6f7a57727a5ac73a77ae0724a4156e}{view\_sdl}};}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00171\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VIEW\_SDL\_H}}
+
+\end{DoxyCode}

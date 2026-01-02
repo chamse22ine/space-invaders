@@ -1,0 +1,84 @@
+\doxysection{View\+Interface Struct Reference}
+\hypertarget{structViewInterface}{}\label{structViewInterface}\index{ViewInterface@{ViewInterface}}
+
+
+Structure regroupant les méthodes virtuelles (API) d\textquotesingle{}une Vue.  
+
+
+
+
+{\ttfamily \#include $<$view\+\_\+interface.\+h$>$}
+
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+bool(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structViewInterface_a4a65a72b137a8a28a39a6ac0ba410508}{init}} )(void)
+\begin{DoxyCompactList}\small\item\em Initialise le sous-\/système graphique et audio. Crée la fenêtre, charge les textures/sons, initialise les polices. \end{DoxyCompactList}\item 
+\Hypertarget{structViewInterface_adf0fcaa2fafda7ab6197f4eee1775bab}\label{structViewInterface_adf0fcaa2fafda7ab6197f4eee1775bab} 
+void(\texorpdfstring{$\ast$}{*} {\bfseries close} )(void)
+\begin{DoxyCompactList}\small\item\em Nettoyeur. Ferme la fenêtre et libère la mémoire. Doit détruire les textures, fermer les flux audio et quitter la librairie proprement. \end{DoxyCompactList}\item 
+void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structViewInterface_aa78cae014c7a327610e2cf94b215a0c7}{render}} )(const \mbox{\hyperlink{structGameModel}{Game\+Model}} \texorpdfstring{$\ast$}{*}model)
+\begin{DoxyCompactList}\small\item\em La boucle de rendu. Dessine une frame complète. Cette fonction est appelée en boucle (ex\+: 60 fois par seconde). Elle doit effacer l\textquotesingle{}écran, dessiner tous les éléments du modèle, et afficher le résultat (flip). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{controller_8h_abc5a0df439bf92177bc39309fe831280}{Game\+Command}}(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structViewInterface_ab84c4c093f2ea4df2ca75a589b8fefb1}{get\+\_\+input}} )(\mbox{\hyperlink{structGameModel}{Game\+Model}} \texorpdfstring{$\ast$}{*}model)
+\begin{DoxyCompactList}\small\item\em Capteur d\textquotesingle{}événements (Input). Transforme les appuis touches/boutons bruts (SDL\+\_\+\+Event, getch) en commandes de jeu logiques. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Structure regroupant les méthodes virtuelles (API) d\textquotesingle{}une Vue. 
+
+Pour créer une nouvelle vue (ex\+: {\ttfamily view\+\_\+vulkan.\+c}), il suffit de créer une instance de cette structure et de remplir ces 4 pointeurs avec les fonctions correspondantes. 
+
+\label{doc-variable-members}
+\Hypertarget{structViewInterface_doc-variable-members}
+\doxysubsection{Field Documentation}
+\Hypertarget{structViewInterface_ab84c4c093f2ea4df2ca75a589b8fefb1}\index{ViewInterface@{ViewInterface}!get\_input@{get\_input}}
+\index{get\_input@{get\_input}!ViewInterface@{ViewInterface}}
+\doxysubsubsection{\texorpdfstring{get\_input}{get\_input}}
+{\footnotesize\ttfamily \label{structViewInterface_ab84c4c093f2ea4df2ca75a589b8fefb1} 
+\mbox{\hyperlink{controller_8h_abc5a0df439bf92177bc39309fe831280}{Game\+Command}}(\texorpdfstring{$\ast$}{*} View\+Interface\+::get\+\_\+input) (\mbox{\hyperlink{structGameModel}{Game\+Model}} \texorpdfstring{$\ast$}{*}model)}
+
+
+
+Capteur d\textquotesingle{}événements (Input). Transforme les appuis touches/boutons bruts (SDL\+\_\+\+Event, getch) en commandes de jeu logiques. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & Pointeur vers le modèle (nécessaire pour le contexte, ex\+: saisie de texte vs jeu). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+La commande abstraite (\doxylink{controller_8h_abc5a0df439bf92177bc39309fe831280}{Game\+Command}) correspondant à l\textquotesingle{}action du joueur. 
+\end{DoxyReturn}
+\Hypertarget{structViewInterface_a4a65a72b137a8a28a39a6ac0ba410508}\index{ViewInterface@{ViewInterface}!init@{init}}
+\index{init@{init}!ViewInterface@{ViewInterface}}
+\doxysubsubsection{\texorpdfstring{init}{init}}
+{\footnotesize\ttfamily \label{structViewInterface_a4a65a72b137a8a28a39a6ac0ba410508} 
+bool(\texorpdfstring{$\ast$}{*} View\+Interface\+::init) (void)}
+
+
+
+Initialise le sous-\/système graphique et audio. Crée la fenêtre, charge les textures/sons, initialise les polices. 
+
+\begin{DoxyReturn}{Returns}
+true si tout s\textquotesingle{}est bien passé, false si une erreur critique (ex\+: pas de carte graphique) survient. 
+\end{DoxyReturn}
+\Hypertarget{structViewInterface_aa78cae014c7a327610e2cf94b215a0c7}\index{ViewInterface@{ViewInterface}!render@{render}}
+\index{render@{render}!ViewInterface@{ViewInterface}}
+\doxysubsubsection{\texorpdfstring{render}{render}}
+{\footnotesize\ttfamily \label{structViewInterface_aa78cae014c7a327610e2cf94b215a0c7} 
+void(\texorpdfstring{$\ast$}{*} View\+Interface\+::render) (const \mbox{\hyperlink{structGameModel}{Game\+Model}} \texorpdfstring{$\ast$}{*}model)}
+
+
+
+La boucle de rendu. Dessine une frame complète. Cette fonction est appelée en boucle (ex\+: 60 fois par seconde). Elle doit effacer l\textquotesingle{}écran, dessiner tous les éléments du modèle, et afficher le résultat (flip). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & Pointeur en lecture seule (const) vers l\textquotesingle{}état du jeu à dessiner. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{view__interface_8h}{view\+\_\+interface.\+h}}\end{DoxyCompactItemize}

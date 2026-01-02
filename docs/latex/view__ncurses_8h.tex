@@ -1,0 +1,36 @@
+\doxysection{include/view\+\_\+ncurses.h File Reference}
+\hypertarget{view__ncurses_8h}{}\label{view__ncurses_8h}\index{include/view\_ncurses.h@{include/view\_ncurses.h}}
+
+
+Implémentation de la Vue en mode Texte (Ncurses/\+ASCII).  
+
+
+{\ttfamily \#include "{}view\+\_\+interface.\+h"{}}\newline
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{structViewInterface}{View\+Interface}} \mbox{\hyperlink{view__ncurses_8h_a67157fa8cc5a49d3e5498df8e6be5836}{view\+\_\+ncurses}}
+\begin{DoxyCompactList}\small\item\em Instance concrète de l\textquotesingle{}interface View pour le mode Terminal. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implémentation de la Vue en mode Texte (Ncurses/\+ASCII). 
+
+Ce fichier expose l\textquotesingle{}implémentation "{}\+Low-\/\+Tech"{} du jeu. Il permet d\textquotesingle{}exécuter le jeu directement dans un terminal, en utilisant des caractères ASCII pour représenter les entités (ex\+: "{}\+A"{} pour un alien, "{}\texorpdfstring{$^\wedge$}{\string^}"{} pour le joueur). C\textquotesingle{}est une alternative légère à la version SDL. 
+
+\label{doc-var-members}
+\Hypertarget{view__ncurses_8h_doc-var-members}
+\doxysubsection{Variable Documentation}
+\Hypertarget{view__ncurses_8h_a67157fa8cc5a49d3e5498df8e6be5836}\index{view\_ncurses.h@{view\_ncurses.h}!view\_ncurses@{view\_ncurses}}
+\index{view\_ncurses@{view\_ncurses}!view\_ncurses.h@{view\_ncurses.h}}
+\doxysubsubsection{\texorpdfstring{view\_ncurses}{view\_ncurses}}
+{\footnotesize\ttfamily \label{view__ncurses_8h_a67157fa8cc5a49d3e5498df8e6be5836} 
+const \mbox{\hyperlink{structViewInterface}{View\+Interface}} view\+\_\+ncurses\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Instance concrète de l\textquotesingle{}interface View pour le mode Terminal. 
+
+Cette structure contient les pointeurs vers les fonctions réelles de Ncurses (ncurses\+\_\+init, ncurses\+\_\+render, etc.).
+
+Elle est utilisée par le {\ttfamily \doxylink{main_8c}{main.\+c}} lorsque l\textquotesingle{}argument "{}text"{} ou "{}ncurses"{} est passé au lancement du programme. 

@@ -1,0 +1,49 @@
+\doxysection{src/view\+\_\+ncurses.c File Reference}
+\hypertarget{view__ncurses_8c}{}\label{view__ncurses_8c}\index{src/view\_ncurses.c@{src/view\_ncurses.c}}
+
+
+Implémentation de la vue en mode terminal avec ncurses.  
+
+
+{\ttfamily \#include "{}view\+\_\+ncurses.\+h"{}}\newline
+{\ttfamily \#include $<$ncurses.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{structViewInterface}{View\+Interface}} \mbox{\hyperlink{view__ncurses_8c_a67157fa8cc5a49d3e5498df8e6be5836}{view\+\_\+ncurses}}
+\begin{DoxyCompactList}\small\item\em Instance concrète de l\textquotesingle{}interface View pour le mode Terminal. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implémentation de la vue en mode terminal avec ncurses. 
+
+Ce fichier gère l\textquotesingle{}affichage du jeu Space Invaders dans un terminal en utilisant la bibliothèque ncurses pour le rendu ASCII et les couleurs. 
+
+\label{doc-var-members}
+\Hypertarget{view__ncurses_8c_doc-var-members}
+\doxysubsection{Variable Documentation}
+\Hypertarget{view__ncurses_8c_a67157fa8cc5a49d3e5498df8e6be5836}\index{view\_ncurses.c@{view\_ncurses.c}!view\_ncurses@{view\_ncurses}}
+\index{view\_ncurses@{view\_ncurses}!view\_ncurses.c@{view\_ncurses.c}}
+\doxysubsubsection{\texorpdfstring{view\_ncurses}{view\_ncurses}}
+{\footnotesize\ttfamily \label{view__ncurses_8c_a67157fa8cc5a49d3e5498df8e6be5836} 
+const \mbox{\hyperlink{structViewInterface}{View\+Interface}} view\+\_\+ncurses}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ .init\ =\ ncurses\_init,}
+\DoxyCodeLine{\ \ \ \ .close\ =\ ncurses\_close,}
+\DoxyCodeLine{\ \ \ \ .render\ =\ ncurses\_render,}
+\DoxyCodeLine{\ \ \ \ .get\_input\ =\ ncurses\_get\_input\}}
+
+\end{DoxyCode}
+
+
+Instance concrète de l\textquotesingle{}interface View pour le mode Terminal. 
+
+Cette structure contient les pointeurs vers les fonctions réelles de Ncurses (ncurses\+\_\+init, ncurses\+\_\+render, etc.).
+
+Elle est utilisée par le {\ttfamily \doxylink{main_8c}{main.\+c}} lorsque l\textquotesingle{}argument "{}text"{} ou "{}ncurses"{} est passé au lancement du programme. 

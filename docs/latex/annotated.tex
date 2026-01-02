@@ -1,0 +1,12 @@
+\doxysection{Data Structures}
+Here are the data structures with brief descriptions\+:\begin{DoxyCompactList}
+\item\contentsline{section}{\mbox{\hyperlink{structEntity}{Entity}} \\*Entité générique (Acteur du jeu). Structure polymorphe simple utilisée pour tout ce qui bouge }{\pageref{structEntity}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structGameAudio}{Game\+Audio}} \\*Gestionnaire Audio. Contient les sons (SFX) et musiques chargés via SDL3\+\_\+mixer }{\pageref{structGameAudio}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structGameModel}{Game\+Model}} \\*Structure Principale (God Object). Contient l\textquotesingle{}intégralité des données du jeu. C\textquotesingle{}est ce bloc mémoire qui est écrit sur le disque lors d\textquotesingle{}une sauvegarde (Serialization) }{\pageref{structGameModel}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structGameTextures}{Game\+Textures}} \\*Gestionnaire de Textures. Contient tous les pointeurs {\ttfamily SDL\+\_\+\+Texture\texorpdfstring{$\ast$}{*}} chargés en mémoire GPU }{\pageref{structGameTextures}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structSDLContext}{SDLContext}} \\*Contexte Global SDL. Structure "{}\+God Object"{} passée à toutes les fonctions de rendu SDL. Regroupe la fenêtre, le renderer, et les assets chargés }{\pageref{structSDLContext}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structShield}{Shield}} \\*Entité Spéciale \+: Bouclier (Bunker). Objet statique destructible pixel par pixel (ou par niveau de dégradation) }{\pageref{structShield}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structSoundState}{Sound\+State}} \\*Système de drapeaux (Flags) Audio. Pattern "{}\+Fire-\/and-\/\+Forget"{} \+: Le Modèle demande un son (true), la Vue le joue et reset (false) }{\pageref{structSoundState}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structUfo}{Ufo}} \\*Entité Spéciale \+: L\textquotesingle{}OVNI (Mystery Ship). Séparé car il a des règles d\textquotesingle{}apparition uniques }{\pageref{structUfo}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structViewInterface}{View\+Interface}} \\*Structure regroupant les méthodes virtuelles (API) d\textquotesingle{}une Vue }{\pageref{structViewInterface}}{}
+\end{DoxyCompactList}

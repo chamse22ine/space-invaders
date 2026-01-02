@@ -1,0 +1,218 @@
+\doxysection{src/model.c File Reference}
+\hypertarget{model_8c}{}\label{model_8c}\index{src/model.c@{src/model.c}}
+
+
+Implémentation de la logique du jeu (Physique, IA, Collisions).  
+
+
+{\ttfamily \#include "{}model.\+h"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$sys/stat.\+h$>$}\newline
+{\ttfamily \#include $<$dirent.\+h$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structGameModel}{Game\+Model}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{model_8c_a7f6d8e6b6c393548b29cd05c672a5fe4}{model\+\_\+init}} (void)
+\begin{DoxyCompactList}\small\item\em Initialise et alloue un nouveau modèle de jeu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{model_8c_a4660b19c738e8c7fdc631585d0bc858e}{model\+\_\+free}} (\mbox{\hyperlink{structGameModel}{Game\+Model}} \texorpdfstring{$\ast$}{*}model)
+\begin{DoxyCompactList}\small\item\em Libère la mémoire allouée pour le modèle de jeu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{model_8c_ae400e8f868c134818f339507b11184d4}{model\+\_\+handle\+\_\+input}} (\mbox{\hyperlink{structGameModel}{Game\+Model}} \texorpdfstring{$\ast$}{*}model, \mbox{\hyperlink{controller_8h_abc5a0df439bf92177bc39309fe831280}{Game\+Command}} cmd)
+\begin{DoxyCompactList}\small\item\em Gère les entrées utilisateur en fonction de l\textquotesingle{}état actuel du jeu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{model_8c_a92ee0410272ecbd81bb7ab7ed8d912fd}{model\+\_\+update}} (\mbox{\hyperlink{structGameModel}{Game\+Model}} \texorpdfstring{$\ast$}{*}model, double dt)
+\begin{DoxyCompactList}\small\item\em Met à jour l\textquotesingle{}état du jeu pour une frame. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{model_8c_af1d995c89f2c13363f6648b3884b42ea}{model\+\_\+scan\+\_\+saves}} (\mbox{\hyperlink{structGameModel}{Game\+Model}} \texorpdfstring{$\ast$}{*}model)
+\begin{DoxyCompactList}\small\item\em Scanne le dossier de sauvegardes et remplit la liste des fichiers disponibles. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{model_8c_a1b710e808411bdeb72f1353b82ffcc9c}{model\+\_\+save\+\_\+named}} (const \mbox{\hyperlink{structGameModel}{Game\+Model}} \texorpdfstring{$\ast$}{*}model, const char \texorpdfstring{$\ast$}{*}filename)
+\begin{DoxyCompactList}\small\item\em Sauvegarde l\textquotesingle{}état actuel du jeu dans un fichier binaire. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{model_8c_ab08aabb686c74da7bd503dfd03abee12}{model\+\_\+load\+\_\+named}} (\mbox{\hyperlink{structGameModel}{Game\+Model}} \texorpdfstring{$\ast$}{*}model, const char \texorpdfstring{$\ast$}{*}filename)
+\begin{DoxyCompactList}\small\item\em Charge une sauvegarde depuis un fichier binaire. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implémentation de la logique du jeu (Physique, IA, Collisions). 
+
+
+
+\label{doc-func-members}
+\Hypertarget{model_8c_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{model_8c_a4660b19c738e8c7fdc631585d0bc858e}\index{model.c@{model.c}!model\_free@{model\_free}}
+\index{model\_free@{model\_free}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{model\_free()}{model\_free()}}
+{\footnotesize\ttfamily \label{model_8c_a4660b19c738e8c7fdc631585d0bc858e} 
+void model\+\_\+free (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGameModel}{Game\+Model}} \texorpdfstring{$\ast$}{*}}]{model}{}\end{DoxyParamCaption})}
+
+
+
+Libère la mémoire allouée pour le modèle de jeu. 
+
+Libère la mémoire (Destructeur).
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & Le modèle de jeu à libérer (peut être NULL). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{model_8c_ae400e8f868c134818f339507b11184d4}\index{model.c@{model.c}!model\_handle\_input@{model\_handle\_input}}
+\index{model\_handle\_input@{model\_handle\_input}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{model\_handle\_input()}{model\_handle\_input()}}
+{\footnotesize\ttfamily \label{model_8c_ae400e8f868c134818f339507b11184d4} 
+void model\+\_\+handle\+\_\+input (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGameModel}{Game\+Model}} \texorpdfstring{$\ast$}{*}}]{model}{, }\item[{\mbox{\hyperlink{controller_8h_abc5a0df439bf92177bc39309fe831280}{Game\+Command}}}]{cmd}{}\end{DoxyParamCaption})}
+
+
+
+Gère les entrées utilisateur en fonction de l\textquotesingle{}état actuel du jeu. 
+
+Traite une commande abstraite (Input).
+
+Dispatche les commandes vers la logique appropriée selon l\textquotesingle{}état du jeu \+:
+\begin{DoxyItemize}
+\item STATE\+\_\+\+MENU \+: Navigation et sélection dans le menu principal
+\item STATE\+\_\+\+LOAD\+\_\+\+MENU \+: Sélection d\textquotesingle{}une sauvegarde à charger
+\item STATE\+\_\+\+TUTORIAL \+: Affichage du tutoriel
+\item STATE\+\_\+\+PLAYING \+: Contrôle du vaisseau et tir
+\item STATE\+\_\+\+PAUSED \+: Menu pause avec options
+\item STATE\+\_\+\+GAME\+\_\+\+OVER \+: Écran de fin de partie
+\item STATE\+\_\+\+SAVE\+\_\+\texorpdfstring{$\ast$}{*} \+: Gestion des sauvegardes
+\item STATE\+\_\+\+CONFIRM\+\_\+\+QUIT \+: Confirmation avant de quitter
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & Le modèle de jeu à mettre à jour. \\
+\hline
+{\em cmd} & La commande reçue du contrôleur (\doxylink{controller_8h_abc5a0df439bf92177bc39309fe831280}{Game\+Command}). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{model_8c_a7f6d8e6b6c393548b29cd05c672a5fe4}\index{model.c@{model.c}!model\_init@{model\_init}}
+\index{model\_init@{model\_init}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{model\_init()}{model\_init()}}
+{\footnotesize\ttfamily \label{model_8c_a7f6d8e6b6c393548b29cd05c672a5fe4} 
+\mbox{\hyperlink{structGameModel}{Game\+Model}} \texorpdfstring{$\ast$}{*} model\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Initialise et alloue un nouveau modèle de jeu. 
+
+Initialise le modèle (Constructeur). Alloue la structure et configure les valeurs par défaut (Niveau 1, Score 0).
+
+Crée la structure \doxylink{structGameModel}{Game\+Model} avec tous ses composants initialisés \+:
+\begin{DoxyItemize}
+\item État initial sur le menu principal
+\item Joueur positionné au centre de l\textquotesingle{}écran
+\item Grille d\textquotesingle{}ennemis créée
+\item Boucliers mis en place
+\item Volume audio à 30\%
+\end{DoxyItemize}
+
+\begin{DoxyReturn}{Returns}
+Pointeur vers le \doxylink{structGameModel}{Game\+Model} alloué, ou NULL en cas d\textquotesingle{}échec d\textquotesingle{}allocation. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Le dossier "{}sauvegardes"{} est créé s\textquotesingle{}il n\textquotesingle{}existe pas. 
+\end{DoxyNote}
+\Hypertarget{model_8c_ab08aabb686c74da7bd503dfd03abee12}\index{model.c@{model.c}!model\_load\_named@{model\_load\_named}}
+\index{model\_load\_named@{model\_load\_named}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{model\_load\_named()}{model\_load\_named()}}
+{\footnotesize\ttfamily \label{model_8c_ab08aabb686c74da7bd503dfd03abee12} 
+bool model\+\_\+load\+\_\+named (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGameModel}{Game\+Model}} \texorpdfstring{$\ast$}{*}}]{model}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{filename}{}\end{DoxyParamCaption})}
+
+
+
+Charge une sauvegarde depuis un fichier binaire. 
+
+Chargement binaire. Lit un fichier .dat et écrase le {\ttfamily \doxylink{structGameModel}{Game\+Model}} actuel avec les données lues.
+
+Lit le fichier spécifié et restaure l\textquotesingle{}état complet du jeu. Après le chargement, l\textquotesingle{}état est automatiquement mis sur STATE\+\_\+\+PLAYING et les timers visuels sont réinitialisés.
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & Le modèle de jeu à restaurer. \\
+\hline
+{\em filename} & Le nom du fichier de sauvegarde (ex\+: "{}partie1.\+dat"{}). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true si le chargement a réussi, false sinon (fichier inexistant ou corrompu). 
+\end{DoxyReturn}
+\Hypertarget{model_8c_a1b710e808411bdeb72f1353b82ffcc9c}\index{model.c@{model.c}!model\_save\_named@{model\_save\_named}}
+\index{model\_save\_named@{model\_save\_named}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{model\_save\_named()}{model\_save\_named()}}
+{\footnotesize\ttfamily \label{model_8c_a1b710e808411bdeb72f1353b82ffcc9c} 
+void model\+\_\+save\+\_\+named (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structGameModel}{Game\+Model}} \texorpdfstring{$\ast$}{*}}]{model}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{filename}{}\end{DoxyParamCaption})}
+
+
+
+Sauvegarde l\textquotesingle{}état actuel du jeu dans un fichier binaire. 
+
+Sauvegarde binaire. Ecrit l\textquotesingle{}intégralité de la structure {\ttfamily \doxylink{structGameModel}{Game\+Model}} dans un fichier.
+
+Écrit la structure \doxylink{structGameModel}{Game\+Model} complète dans un fichier du dossier "{}sauvegardes/"{}. La sauvegarde est effectuée en mode binaire (dump mémoire).
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & Le modèle de jeu à sauvegarder. \\
+\hline
+{\em filename} & Le nom du fichier de sauvegarde (ex\+: "{}partie1.\+dat"{}). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Le dossier "{}sauvegardes"{} est créé automatiquement s\textquotesingle{}il n\textquotesingle{}existe pas. 
+\end{DoxyNote}
+\Hypertarget{model_8c_af1d995c89f2c13363f6648b3884b42ea}\index{model.c@{model.c}!model\_scan\_saves@{model\_scan\_saves}}
+\index{model\_scan\_saves@{model\_scan\_saves}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{model\_scan\_saves()}{model\_scan\_saves()}}
+{\footnotesize\ttfamily \label{model_8c_af1d995c89f2c13363f6648b3884b42ea} 
+void model\+\_\+scan\+\_\+saves (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGameModel}{Game\+Model}} \texorpdfstring{$\ast$}{*}}]{model}{}\end{DoxyParamCaption})}
+
+
+
+Scanne le dossier de sauvegardes et remplit la liste des fichiers disponibles. 
+
+Scanne le dossier de sauvegarde. Remplit {\ttfamily model-\/\texorpdfstring{$>$}{>}save\+\_\+files} avec les noms des fichiers .dat trouvés.
+
+Parcourt le répertoire "{}sauvegardes/"{} et collecte tous les fichiers avec l\textquotesingle{}extension "{}.\+dat"{}. Les noms sont stockés dans model-\/\texorpdfstring{$>$}{>}save\+\_\+files\mbox{[}\mbox{]} et le compteur model-\/\texorpdfstring{$>$}{>}save\+\_\+file\+\_\+count est mis à jour.
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & Le modèle de jeu dont la liste de sauvegardes sera mise à jour. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Limite de MAX\+\_\+\+SAVE\+\_\+\+FILES fichiers maximum. 
+\end{DoxyNote}
+\Hypertarget{model_8c_a92ee0410272ecbd81bb7ab7ed8d912fd}\index{model.c@{model.c}!model\_update@{model\_update}}
+\index{model\_update@{model\_update}!model.c@{model.c}}
+\doxysubsubsection{\texorpdfstring{model\_update()}{model\_update()}}
+{\footnotesize\ttfamily \label{model_8c_a92ee0410272ecbd81bb7ab7ed8d912fd} 
+void model\+\_\+update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structGameModel}{Game\+Model}} \texorpdfstring{$\ast$}{*}}]{model}{, }\item[{double}]{dt}{}\end{DoxyParamCaption})}
+
+
+
+Met à jour l\textquotesingle{}état du jeu pour une frame. 
+
+Met à jour la logique du jeu (Physics \& Logic). Appelé à chaque frame.
+
+Fonction principale de la boucle de jeu qui gère \+:
+\begin{DoxyItemize}
+\item Les timers (tir, invincibilité, animations)
+\item Le déplacement du joueur avec contraintes de bords
+\item Le comportement de l\textquotesingle{}OVNI (spawn, mouvement, explosion)
+\item Le déplacement collectif des ennemis (pattern classique)
+\item La montée de difficulté (accélération progressive)
+\item Les tirs ennemis aléatoires
+\item La physique des balles et détection de collisions
+\item Les transitions de niveau quand tous les ennemis sont éliminés
+\item Les conditions de Game Over (vies \texorpdfstring{$<$}{<}= 0)
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & Le modèle de jeu à mettre à jour. \\
+\hline
+{\em dt} & Delta time en secondes depuis la dernière frame. \\
+\hline
+\end{DoxyParams}

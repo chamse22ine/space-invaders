@@ -1,0 +1,22 @@
+\doxysection{src/view\+\_\+sdl.c File Reference}
+\hypertarget{view__sdl_8c}{}\label{view__sdl_8c}\index{src/view\_sdl.c@{src/view\_sdl.c}}
+
+
+Implémentation de la vue graphique avec SDL3.  
+
+
+{\ttfamily \#include "{}view\+\_\+sdl.\+h"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{view__sdl_8c_add6f7a57727a5ac73a77ae0724a4156e}\label{view__sdl_8c_add6f7a57727a5ac73a77ae0724a4156e} 
+const \mbox{\hyperlink{structViewInterface}{View\+Interface}} {\bfseries view\+\_\+sdl} = \{.init = sdl\+\_\+init, .close = sdl\+\_\+close, .render = sdl\+\_\+render, .get\+\_\+input = sdl\+\_\+get\+\_\+input\}
+\begin{DoxyCompactList}\small\item\em Instance concrète de l\textquotesingle{}interface View pour SDL. Cette variable permet au {\ttfamily \doxylink{main_8c}{main.\+c}} d\textquotesingle{}utiliser SDL sans connaître les détails ci-\/dessus. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implémentation de la vue graphique avec SDL3. 
+
+Ce fichier gère l\textquotesingle{}affichage du jeu Space Invaders en mode graphique en utilisant SDL3 pour le rendu, SDL\+\_\+ttf pour les polices et SDL\+\_\+mixer pour l\textquotesingle{}audio. 

@@ -1,0 +1,61 @@
+================================================================================
+                         SPACE INVADERS - GUIDE D'INSTALLATION
+================================================================================
+
+--------------------------------------------------------------------------------
+1. PRÉ-REQUIS SYSTÈME
+--------------------------------------------------------------------------------
+
+Les bibliothèques suivantes sont incluses dans le dossier "3rdParty/" :
+    - SDL3        (rendu graphique)
+    - SDL3_image  (chargement d'images)
+    - SDL3_mixer  (gestion audio)
+    - SDL3_ttf    (rendu de polices)
+
+--------------------------------------------------------------------------------
+2. PRÉPARATION
+--------------------------------------------------------------------------------
+
+Assurez-vous que les scripts ont les droits d'exécution :
+
+    chmod +x build.sh clean.sh
+
+--------------------------------------------------------------------------------
+3. COMPILATION
+--------------------------------------------------------------------------------
+
+Option A : Première installation (recommandé)
+    
+    ./build.sh
+
+    Ce script compile automatiquement :
+    1. Les bibliothèques SDL3 (si pas déjà compilées)
+    2. Le Space Invaders
+
+Option B : Recompilation après modification du code
+
+    make
+
+Option C : Nettoyage complet et recompilation
+
+    ./clean.sh    # Supprime tous les fichiers compilés
+    ./build.sh    # Recompile tout depuis zéro
+
+--------------------------------------------------------------------------------
+4. LANCEMENT
+--------------------------------------------------------------------------------
+
+    make run-sdl          # Mode SDL (graphique, par défaut)
+    make run-ncurses      # Mode terminal (ncurses)
+
+--------------------------------------------------------------------------------
+5. COMMANDES EN JEU
+--------------------------------------------------------------------------------
+
+    Flèches Gauche/Droite   : Déplacer le vaisseau
+    Espace                  : Tirer
+    P / Échap               : Pause
+    Q                       : Quitter
+    Entrée                  : Valider (menus)
+    F11                     : Plein écran (mode SDL)
+

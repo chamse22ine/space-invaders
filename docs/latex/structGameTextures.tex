@@ -1,0 +1,87 @@
+\doxysection{Game\+Textures Struct Reference}
+\hypertarget{structGameTextures}{}\label{structGameTextures}\index{GameTextures@{GameTextures}}
+
+
+Gestionnaire de Textures. Contient tous les pointeurs {\ttfamily SDL\+\_\+\+Texture\texorpdfstring{$\ast$}{*}} chargés en mémoire GPU.  
+
+
+
+
+{\ttfamily \#include $<$view\+\_\+sdl.\+h$>$}
+
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structGameTextures_ab503d9b62d6f122da27229f23180c4ea}\label{structGameTextures_ab503d9b62d6f122da27229f23180c4ea} 
+SDL\+\_\+\+Texture \texorpdfstring{$\ast$}{*} {\bfseries player}
+\begin{DoxyCompactList}\small\item\em Sprite du vaisseau joueur. \end{DoxyCompactList}\item 
+\Hypertarget{structGameTextures_a5b01d0d4f8053cfb824e0fe68f32b4e5}\label{structGameTextures_a5b01d0d4f8053cfb824e0fe68f32b4e5} 
+SDL\+\_\+\+Texture \texorpdfstring{$\ast$}{*} {\bfseries bullet}
+\begin{DoxyCompactList}\small\item\em Sprite générique de balle. \end{DoxyCompactList}\item 
+\Hypertarget{structGameTextures_a6c2b710235e0b0d4f72e88df6163081f}\label{structGameTextures_a6c2b710235e0b0d4f72e88df6163081f} 
+SDL\+\_\+\+Texture \texorpdfstring{$\ast$}{*} {\bfseries ufo}
+\begin{DoxyCompactList}\small\item\em Sprite de l\textquotesingle{}OVNI bonus. \end{DoxyCompactList}\item 
+SDL\+\_\+\+Texture \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structGameTextures_aba53a2031febf333070d6e422a8388f1}{enemies}} \mbox{[}3\mbox{]}\mbox{[}2\mbox{]}
+\begin{DoxyCompactList}\small\item\em Tableau des sprites d\textquotesingle{}ennemis. Dimensions \+: \mbox{[}3 Types\mbox{]} x \mbox{[}2 Frames d\textquotesingle{}animation\mbox{]}. \end{DoxyCompactList}\item 
+\Hypertarget{structGameTextures_ad4d9aaf8aa2b480ca3e498c34c73b014}\label{structGameTextures_ad4d9aaf8aa2b480ca3e498c34c73b014} 
+SDL\+\_\+\+Texture \texorpdfstring{$\ast$}{*} {\bfseries bg\+\_\+menu}
+\begin{DoxyCompactList}\small\item\em Fond écran titre. \end{DoxyCompactList}\item 
+\Hypertarget{structGameTextures_a5d573754b55ca6be1e832295b4553f95}\label{structGameTextures_a5d573754b55ca6be1e832295b4553f95} 
+SDL\+\_\+\+Texture \texorpdfstring{$\ast$}{*} {\bfseries bg\+\_\+menu\+\_\+1}
+\begin{DoxyCompactList}\small\item\em Fond sous-\/menus. \end{DoxyCompactList}\item 
+\Hypertarget{structGameTextures_af3aac17e5aef83d5e1f7a91ff9d3eb7d}\label{structGameTextures_af3aac17e5aef83d5e1f7a91ff9d3eb7d} 
+SDL\+\_\+\+Texture \texorpdfstring{$\ast$}{*} {\bfseries bg\+\_\+game}
+\begin{DoxyCompactList}\small\item\em Fond étoilé du jeu. \end{DoxyCompactList}\item 
+\Hypertarget{structGameTextures_a666b0b9abed6d87018fd92cd7d5fa12c}\label{structGameTextures_a666b0b9abed6d87018fd92cd7d5fa12c} 
+SDL\+\_\+\+Texture \texorpdfstring{$\ast$}{*} {\bfseries heart\+\_\+full}
+\begin{DoxyCompactList}\small\item\em Cœur plein (Vie restante). \end{DoxyCompactList}\item 
+\Hypertarget{structGameTextures_a79482939c7842a87fa96fac10b38b67e}\label{structGameTextures_a79482939c7842a87fa96fac10b38b67e} 
+SDL\+\_\+\+Texture \texorpdfstring{$\ast$}{*} {\bfseries heart\+\_\+empty}
+\begin{DoxyCompactList}\small\item\em Cœur vide (Vie perdue). \end{DoxyCompactList}\item 
+\Hypertarget{structGameTextures_a11b4fb01abe7df769088f7de2e000918}\label{structGameTextures_a11b4fb01abe7df769088f7de2e000918} 
+SDL\+\_\+\+Texture \texorpdfstring{$\ast$}{*} {\bfseries blur}
+\begin{DoxyCompactList}\small\item\em Texture pour effet de flou (optionnel). \end{DoxyCompactList}\item 
+\Hypertarget{structGameTextures_a30ff76fe3a74014ff76012715630e820}\label{structGameTextures_a30ff76fe3a74014ff76012715630e820} 
+SDL\+\_\+\+Texture \texorpdfstring{$\ast$}{*} {\bfseries expl\+\_\+player} \mbox{[}2\mbox{]}
+\begin{DoxyCompactList}\small\item\em Animation mort joueur (2 frames). \end{DoxyCompactList}\item 
+\Hypertarget{structGameTextures_a044edaa5b5db37eaf5f0da8293c65167}\label{structGameTextures_a044edaa5b5db37eaf5f0da8293c65167} 
+SDL\+\_\+\+Texture \texorpdfstring{$\ast$}{*} {\bfseries expl\+\_\+enemy}
+\begin{DoxyCompactList}\small\item\em Explosion alien (hitmarker). \end{DoxyCompactList}\item 
+\Hypertarget{structGameTextures_aa8f44b892b3f3dadb3dd9bfbf619b20a}\label{structGameTextures_aa8f44b892b3f3dadb3dd9bfbf619b20a} 
+SDL\+\_\+\+Texture \texorpdfstring{$\ast$}{*} {\bfseries expl\+\_\+ufo}
+\begin{DoxyCompactList}\small\item\em Explosion spéciale OVNI. \end{DoxyCompactList}\item 
+\Hypertarget{structGameTextures_a07896e6a054a97b9aa40401f96c50d35}\label{structGameTextures_a07896e6a054a97b9aa40401f96c50d35} 
+SDL\+\_\+\+Texture \texorpdfstring{$\ast$}{*} {\bfseries missiles} \mbox{[}4\mbox{]}
+\begin{DoxyCompactList}\small\item\em Sprites animés missiles joueur. \end{DoxyCompactList}\item 
+\Hypertarget{structGameTextures_a5da73d90a12551a406bdc6f64a9203e8}\label{structGameTextures_a5da73d90a12551a406bdc6f64a9203e8} 
+SDL\+\_\+\+Texture \texorpdfstring{$\ast$}{*} {\bfseries projectiles} \mbox{[}4\mbox{]}
+\begin{DoxyCompactList}\small\item\em Sprites animés tirs aliens. \end{DoxyCompactList}\item 
+\Hypertarget{structGameTextures_a5253f4fe8534f6a615a9dea6cbfe188e}\label{structGameTextures_a5253f4fe8534f6a615a9dea6cbfe188e} 
+SDL\+\_\+\+Texture \texorpdfstring{$\ast$}{*} {\bfseries shields} \mbox{[}10\mbox{]}
+\begin{DoxyCompactList}\small\item\em Sprites d\textquotesingle{}érosion des bunkers (10 états). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Gestionnaire de Textures. Contient tous les pointeurs {\ttfamily SDL\+\_\+\+Texture\texorpdfstring{$\ast$}{*}} chargés en mémoire GPU. 
+
+\label{doc-variable-members}
+\Hypertarget{structGameTextures_doc-variable-members}
+\doxysubsection{Field Documentation}
+\Hypertarget{structGameTextures_aba53a2031febf333070d6e422a8388f1}\index{GameTextures@{GameTextures}!enemies@{enemies}}
+\index{enemies@{enemies}!GameTextures@{GameTextures}}
+\doxysubsubsection{\texorpdfstring{enemies}{enemies}}
+{\footnotesize\ttfamily \label{structGameTextures_aba53a2031febf333070d6e422a8388f1} 
+SDL\+\_\+\+Texture\texorpdfstring{$\ast$}{*} Game\+Textures\+::enemies\mbox{[}3\mbox{]}\mbox{[}2\mbox{]}}
+
+
+
+Tableau des sprites d\textquotesingle{}ennemis. Dimensions \+: \mbox{[}3 Types\mbox{]} x \mbox{[}2 Frames d\textquotesingle{}animation\mbox{]}. 
+
+
+\begin{DoxyItemize}
+\item 
+\end{DoxyItemize}
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{view__sdl_8h}{view\+\_\+sdl.\+h}}\end{DoxyCompactItemize}
