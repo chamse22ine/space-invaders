@@ -105,7 +105,8 @@ install-deps:
 	libdbus-1-dev libudev-dev libibus-1.0-dev \
 	libfreetype6-dev libharfbuzz-dev \
 	libjpeg-dev libpng-dev libtiff-dev libwebp-dev \
-	libflac-dev libvorbis-dev libopus-dev libmodplug-dev libmpg123-dev libsndfile1-dev
+	libflac-dev libvorbis-dev libopus-dev libmodplug-dev libmpg123-dev libsndfile1-dev \
+	libxtst-dev libncurses-dev libncurses5-dev libncursesw5-dev
 	@echo "--- Toutes les dépendances sont installées ! ---"
 
 .PHONY: all clean mrproper run-ncurses run-sdl dirs build install-deps
