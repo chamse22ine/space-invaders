@@ -97,7 +97,7 @@ showanim: CMakeFiles/showanim.dir/examples/showanim.c.o
 showanim: CMakeFiles/showanim.dir/build.make
 showanim: CMakeFiles/showanim.dir/compiler_depend.ts
 showanim: libSDL3_image.so.0.2.4
-showanim: /home/chamseddine/Documents/cours/SAE/L3/c-avance/space-invaders/3rdParty/SDL3/build/libSDL3.so.0.2.24
+showanim: /home/chamseddine/Documents/cours/SAE/L3/c-avance/space-invaders/3rdParty/SDL3/build/libSDL3.so.0.3.7
 showanim: /home/chamseddine/Documents/cours/SAE/L3/c-avance/space-invaders/3rdParty/SDL3/src/dynapi/SDL_dynapi.sym
 showanim: CMakeFiles/showanim.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/chamseddine/Documents/cours/SAE/L3/c-avance/space-invaders/3rdParty/SDL3_image/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable showanim"

@@ -4,7 +4,7 @@ showimage: \
   /usr/lib/gcc/x86_64-redhat-linux/15/crtbegin.o \
   CMakeFiles/showimage.dir/examples/showimage.c.o \
   libSDL3_image.so.0.2.4 \
-  /home/chamseddine/Documents/cours/SAE/L3/c-avance/space-invaders/3rdParty/SDL3/build/libSDL3.so.0.2.24 \
+  /home/chamseddine/Documents/cours/SAE/L3/c-avance/space-invaders/3rdParty/SDL3/build/libSDL3.so.0.3.7 \
   /usr/lib/gcc/x86_64-redhat-linux/15/libgcc.a \
   /usr/lib/gcc/x86_64-redhat-linux/15/libgcc_s.so \
   /usr/lib/gcc/x86_64-redhat-linux/15/libgcc_s.so \
@@ -38,7 +38,7 @@ CMakeFiles/showimage.dir/examples/showimage.c.o:
 
 libSDL3_image.so.0.2.4:
 
-/home/chamseddine/Documents/cours/SAE/L3/c-avance/space-invaders/3rdParty/SDL3/build/libSDL3.so.0.2.24:
+/home/chamseddine/Documents/cours/SAE/L3/c-avance/space-invaders/3rdParty/SDL3/build/libSDL3.so.0.3.7:
 
 /usr/lib/gcc/x86_64-redhat-linux/15/libgcc.a:
 

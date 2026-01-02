@@ -400,7 +400,7 @@ libSDL3_image.so.0.2.4: CMakeFiles/SDL3_image-shared.dir/src/IMG_xpm.c.o
 libSDL3_image.so.0.2.4: CMakeFiles/SDL3_image-shared.dir/src/IMG_xv.c.o
 libSDL3_image.so.0.2.4: CMakeFiles/SDL3_image-shared.dir/build.make
 libSDL3_image.so.0.2.4: CMakeFiles/SDL3_image-shared.dir/compiler_depend.ts
-libSDL3_image.so.0.2.4: /home/chamseddine/Documents/cours/SAE/L3/c-avance/space-invaders/3rdParty/SDL3/build/libSDL3.so.0.2.24
+libSDL3_image.so.0.2.4: /home/chamseddine/Documents/cours/SAE/L3/c-avance/space-invaders/3rdParty/SDL3/build/libSDL3.so.0.3.7
 libSDL3_image.so.0.2.4: /home/chamseddine/Documents/cours/SAE/L3/c-avance/space-invaders/3rdParty/SDL3_image/src/SDL_image.sym
 libSDL3_image.so.0.2.4: /home/chamseddine/Documents/cours/SAE/L3/c-avance/space-invaders/3rdParty/SDL3/src/dynapi/SDL_dynapi.sym
 libSDL3_image.so.0.2.4: CMakeFiles/SDL3_image-shared.dir/link.txt

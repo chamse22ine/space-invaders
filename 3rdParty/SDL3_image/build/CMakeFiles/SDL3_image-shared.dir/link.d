@@ -22,7 +22,7 @@ libSDL3_image.so.0.2.4: \
   CMakeFiles/SDL3_image-shared.dir/src/IMG_xcf.c.o \
   CMakeFiles/SDL3_image-shared.dir/src/IMG_xpm.c.o \
   CMakeFiles/SDL3_image-shared.dir/src/IMG_xv.c.o \
-  /home/chamseddine/Documents/cours/SAE/L3/c-avance/space-invaders/3rdParty/SDL3/build/libSDL3.so.0.2.24 \
+  /home/chamseddine/Documents/cours/SAE/L3/c-avance/space-invaders/3rdParty/SDL3/build/libSDL3.so.0.3.7 \
   /usr/lib/gcc/x86_64-redhat-linux/15/libgcc.a \
   /usr/lib/gcc/x86_64-redhat-linux/15/libgcc_s.so \
   /usr/lib/gcc/x86_64-redhat-linux/15/libgcc_s.so \
@@ -90,7 +90,7 @@ CMakeFiles/SDL3_image-shared.dir/src/IMG_xpm.c.o:
 
 CMakeFiles/SDL3_image-shared.dir/src/IMG_xv.c.o:
 
-/home/chamseddine/Documents/cours/SAE/L3/c-avance/space-invaders/3rdParty/SDL3/build/libSDL3.so.0.2.24:
+/home/chamseddine/Documents/cours/SAE/L3/c-avance/space-invaders/3rdParty/SDL3/build/libSDL3.so.0.3.7:
 
 /usr/lib/gcc/x86_64-redhat-linux/15/libgcc.a:
 

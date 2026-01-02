@@ -17,7 +17,3 @@ rm -rf 3rdParty/SDL3_image/build
 rm -rf 3rdParty/SDL3_mixer/build
 rm -rf 3rdParty/SDL3_ttf/build
 
-##
-# Nettoyage du projet principal (fichiers objets et exécutable)
-##
-make clean
