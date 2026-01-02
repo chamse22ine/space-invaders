@@ -58,7 +58,7 @@ OBJS = $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRCS))
 all: dirs $(TARGET)
 
 # Compile et lance le script de post-traitement (build.sh)
-build: all
+build:
 	@chmod +x build.sh
 	@./build.sh
 
