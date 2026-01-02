@@ -429,8 +429,8 @@ SOFTWARE.
 - Background music: [Game Music Loop 7](https://pixabay.com/sound-effects/game-music-loop-7-145285/) - Licensed under [Licence Pixabay](https://pixabay.com/service/license-summary/) (royalty-free, no attribution required)
 - Level UP sound: [Level Up](https://pixabay.com/sound-effects/level-up-enhancement-8-bit-retro-sound-effect-153002/) - Licensed under [Licence Pixabay](https://pixabay.com/service/license-summary/) (royalty-free, no attribution required)
 - GameOver sound: [Arcade game over](https://www.youtube.com/watch?v=FVJJKIJWKdc)
-- Sprites : [Source](https://www.classicgaming.cc/classics/space-invaders/graphics) - [licence]
-- Sound effects: [Source](https://www.classicgaming.cc/classics/space-invaders/sounds) - [licence]
+- Sprites : [Source](https://www.classicgaming.cc/classics/space-invaders/graphics)
+- Sound effects: [Source](https://www.classicgaming.cc/classics/space-invaders/sounds)
 
 ---
 
