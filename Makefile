@@ -6,6 +6,8 @@
 # - all          : Compile le projet
 # - run-sdl      : Lance en graphique
 # - run-ncurses  : Lance en terminal
+# - valgrind-sdl      : Lance SDL avec Valgrind
+# - valgrind-ncurses  : Lance ncurses avec Valgrind
 # - clean        : Supprime les fichiers compilés (.o, exe)
 # - mrproper     : clean + lance clean.sh (grand nettoyage)
 # - install-deps : Installe les librairies Linux nécessaires (Ubuntu/Debian)
@@ -43,6 +45,20 @@ LDFLAGS = -lm -lncurses \
           -Wl,-rpath,$(abspath $(EXT_DIR)/SDL3/build)
 
 # ============================================================================
+#                         CONFIGURATION VALGRIND
+# ============================================================================
+
+VALGRIND = valgrind
+VALGRIND_FLAGS = --leak-check=full \
+                 --show-leak-kinds=all \
+                 --track-origins=yes \
+                 --verbose \
+                 --log-file=valgrind-output.txt
+
+# Suppressions pour SDL (optionnel, réduit le bruit des fuites internes SDL)
+VALGRIND_SUPPRESS = --suppressions=valgrind.supp
+
+# ============================================================================
 #                              FICHIERS SOURCE
 # ============================================================================
 
@@ -78,13 +94,39 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 dirs:
 	@mkdir -p $(OBJ_DIR)
 
+# ============================================================================
+#                            TESTS VALGRIND
+# ============================================================================
+
+## @brief Lance la vue ncurses avec Valgrind pour détecter les fuites mémoire
+valgrind-ncurses: all
+	@echo "--- Lancement de Valgrind (ncurses) ---"
+	@$(VALGRIND) $(VALGRIND_FLAGS) ./$(TARGET) ncurses
+	@echo "--- Rapport sauvegardé dans valgrind-output.txt ---"
+
+## @brief Lance la vue SDL avec Valgrind pour détecter les fuites mémoire
+valgrind-sdl: all
+	@echo "--- Lancement de Valgrind (SDL) ---"
+	@$(VALGRIND) $(VALGRIND_FLAGS) ./$(TARGET) sdl
+	@echo "--- Rapport sauvegardé dans valgrind-output.txt ---"
+
+
+# ============================================================================
+#                              NETTOYAGE
+# ============================================================================
+
 # Nettoyage standard (juste les binaires)
 clean:
 	@rm -rf $(OBJ_DIR) $(TARGET)
 	@echo "Fichiers de build supprimés."
 
+# Nettoyage des rapports Valgrind
+clean-valgrind:
+	@rm -f valgrind-output.txt
+	@echo "Rapports Valgrind supprimés."
+
 # Grand nettoyage (binaires + ce que fait ton script clean.sh)
-mrproper: clean
+mrproper: clean clean-valgrind
 	@chmod +x clean.sh
 	@./clean.sh
 	@echo "Nettoyage complet (mrproper) effectué."
@@ -106,7 +148,9 @@ install-deps:
 	libfreetype6-dev libharfbuzz-dev \
 	libjpeg-dev libpng-dev libtiff-dev libwebp-dev \
 	libflac-dev libvorbis-dev libopus-dev libmodplug-dev libmpg123-dev libsndfile1-dev \
-	libxtst-dev libncurses-dev libncurses5-dev libncursesw5-dev
+	libxtst-dev libncurses-dev libncurses5-dev libncursesw5-dev \
+	valgrind
 	@echo "--- Toutes les dépendances sont installées ! ---"
 
-.PHONY: all clean mrproper run-ncurses run-sdl dirs build install-deps
+.PHONY: all clean clean-valgrind mrproper run-ncurses run-sdl dirs build install-deps \
+        valgrind-ncurses valgrind-sdl

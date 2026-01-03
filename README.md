@@ -431,6 +431,7 @@ SOFTWARE.
 - GameOver sound: [Arcade game over](https://www.youtube.com/watch?v=FVJJKIJWKdc)
 - Sprites : [Source](https://www.classicgaming.cc/classics/space-invaders/graphics)
 - Sound effects: [Source](https://www.classicgaming.cc/classics/space-invaders/sounds)
+- Background images: générées par ia avec gemini
 
 ---
 
